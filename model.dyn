@@ -1,0 +1,4933 @@
+{
+  "Uuid": "107fdb9d-3f1c-4bd3-8e0a-3069ad191d65",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "model",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Circle": {
+        "Key": "Autodesk.DesignScript.Geometry.Circle",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Surface": {
+        "Key": "Autodesk.DesignScript.Geometry.Surface",
+        "Value": "ProtoGeometry.dll"
+      },
+      "BoundingBox": {
+        "Key": "Autodesk.DesignScript.Geometry.BoundingBox",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Rectangle": {
+        "Key": "Autodesk.DesignScript.Geometry.Rectangle",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Surface.B": {
+        "Key": "Autodesk.DesignScript.Geometry.Surface",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Plane.Origin": {
+        "Key": "Autodesk.DesignScript.Geometry.Plane",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Solid": {
+        "Key": "Autodesk.DesignScript.Geometry.Solid",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Polygon": {
+        "Key": "Autodesk.DesignScript.Geometry.Polygon",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Vector": {
+        "Key": "Autodesk.DesignScript.Geometry.Vector",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Plane": {
+        "Key": "Autodesk.DesignScript.Geometry.Plane",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Curve": {
+        "Key": "Autodesk.DesignScript.Geometry.Curve",
+        "Value": "ProtoGeometry.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "pt1 = Point.ByCoordinates(30,0,0);\npt2 = Point.ByCoordinates(30,0,25);\npt3 = Point.ByCoordinates(30,0,50);\n\npts = [pt1,pt3];\n\ncir1 = Circle.ByCenterPointRadius(pt1,15);\ncir2 = Circle.ByCenterPointRadius(pt2,15);\ncir3 = Circle.ByCenterPointRadius(pt3,15);\n\npol1 = Polygon.RegularPolygon(cir1, 5);\npol2 = Polygon.RegularPolygon(cir2, 5);\npol3 = Polygon.RegularPolygon(cir3, 5);\n\n\ncirs = [cir1,cir2,cir3];\npolygons = [pol1, pol2, pol3];\n\nsrf = Surface.ByLoft(cirs);\n//srf = Surface.ByLoft(polygons);\n\nsrf2 = Surface.ByLoft(polygons);\nnumberOfFloors = 8;",
+      "Id": "fa7fd26d37ec4ba8845f436aa2468bd3",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "3b8e6649e81641749135754c7978e94c",
+          "Name": "",
+          "Description": "pt1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "813097fd4c674f8f8b48375c62767343",
+          "Name": "",
+          "Description": "pt2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "218bc8b8ed8a410aae23a161cd7d6412",
+          "Name": "",
+          "Description": "pt3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "67f56819d2d0400fb6af7942bd79118c",
+          "Name": "",
+          "Description": "pts",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7c20a215bf5b492da3298ec77902d3f6",
+          "Name": "",
+          "Description": "cir1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7c8b0a34df6e4d4b957466ee1d8a9520",
+          "Name": "",
+          "Description": "cir2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "45106106f1d344f1a9ec6bba767b9a3c",
+          "Name": "",
+          "Description": "cir3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ef2305502bb14c059e334b40b0695f40",
+          "Name": "",
+          "Description": "pol1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5651e03419a54c5d8049c8fd8d352575",
+          "Name": "",
+          "Description": "pol2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b253b88f2b004b14886fa466335c58ba",
+          "Name": "",
+          "Description": "pol3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "207c564b83d748a7b4dc31ae00b0feea",
+          "Name": "",
+          "Description": "cirs",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "70502ca157fe43fa803d3e871d8044bb",
+          "Name": "",
+          "Description": "polygons",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0846a9963ac44bc994c3c0a111073d12",
+          "Name": "",
+          "Description": "srf",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5faa55f5fdb44e7facf1f860eb7ea37e",
+          "Name": "",
+          "Description": "srf2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "95c68550f6e146eda127e4ff39376be6",
+          "Name": "",
+          "Description": "numberOfFloors",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\ndef createZcoordFloors(ptB, ptT, nFloors):\r\n\tdist = Point.DistanceTo(ptB,ptT)\r\n\tspan = dist/nFloors\r\n\ti =0\r\n\tzcord=ptB.Z\r\n\tzcords = []\r\n\twhile i< 1000:\r\n\t\tif zcord > ptT.Z:\r\n\t\t\tbreak\r\n\t\telse:\r\n\t\t\tzcords.append(zcord)\r\n\t\ti += 1\r\n\t\tzcord = zcord + span\r\n\treturn [zcords,span]\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\npts = IN[0]\r\nsrf = IN[1]\r\nnFl = IN[2]\r\n# Place your code below this line\r\nzcords = createZcoordFloors(pts[0],pts[1], nFl)\r\nfloorH = zcords[1]\r\n\r\nplns = []\r\ncrvs = []\r\nsrfs = []\r\nsols = []\r\nfor z in zcords[0]:\r\n\tvecZ = Vector.ByCoordinates(0,0,1)\r\n\tori = Point.ByCoordinates(0,0,z)\r\n\t\r\n\tpln = Plane.ByOriginNormal(ori, vecZ)\r\n\tplns.append(pln)\r\n\t\r\n\tcrv = Plane.Intersect(pln,srf)[0]\r\n\tcrvs.append(crv)\r\n\t\r\n\tnsrf = Surface.ByPatch(crv)\r\n\tsrfs.append(nsrf)\r\n\t\r\n\tsol = Curve.ExtrudeAsSolid(crv,0.2)\r\n\tsols.append(sol)\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = [plns,crvs,srfs, sols]",
+      "VariableInputPorts": true,
+      "Id": "1c01416c57494050b7049bb88943a60c",
+      "Inputs": [
+        {
+          "Id": "c9107ab2628c4ec480069b8199ff6098",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "50ed0a83e9e445948b3f6af68684e87d",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5742a267740841bb875c0331c4b79dd8",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a7564e1d9e7846c8b29c8e84a026fd9e",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "//planes =a[0];\n//curves =a[1];\n//surfaces =a[2];\nsolidsFloors =a[3];\n\n//columnPoints = b[0];\n//columnLines = b[1];\n//columnSolids = b[2];",
+      "Id": "78a51e9e009d4936ab9f89a3011ad239",
+      "Inputs": [
+        {
+          "Id": "f1fba4b3b9f9478d933ab8c0c51f8942",
+          "Name": "a",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3bf18b9646244055a0bf32e6a5feae70",
+          "Name": "",
+          "Description": "solidsFloors",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n\r\ndef createDomain(min,max,step):\r\n\tdomain = [0]\r\n\ti=0\r\n\tnumber1 = 0\r\n\tnumber2 = 0\r\n\twhile i < 100:\r\n\t\ti +=1\r\n\t\tnumber1 = number1 + step\r\n\t\tnumber2 = number2 - step\r\n\t\tif number1 <= max:\r\n\t\t\tdomain.append(number1)\r\n\t\t\r\n\t\tif number2 >= min:\r\n\t\t\tdomain.append(number2)\r\n\t\t\r\n\tdomain.sort()\r\n\treturn domain\r\n\t\r\ndef comparePtsOnFloors(pt1,pt2):\r\n\tres = 0\r\n\tif pt1.X == pt2.X and pt1.Y == pt2.Y:\r\n\t\tres = 1\r\n\treturn res\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\npls = IN[0][0]\r\nedges = IN[0][1]\r\nfloors = IN[0][2]\r\nspanX = IN[1][0]\r\nspanY = IN[1][1]\r\n# Place your code below this line\r\n\r\npts = []\r\n\r\n\r\nfor i in range(pls.Count):\r\n\tpl = pls[i]\r\n\tfloor = floors[i]\r\n\tbob = BoundingBox.ByGeometry(floor)\r\n\tpb1 = bob.MinPoint\r\n\tpb2 = bob.MaxPoint\r\n\tdomainX = createDomain(pb1.X, pb2.X, spanX)\r\n\tdomainY = createDomain(pb1.Y, pb2.Y, spanY)\r\n\tipts = []\r\n\tfor ix in domainX:\r\n\t\tfor jy in domainY:\r\n\t\t\tpt = Point.ByCoordinates(ix,jy, pl.Origin.Z)\r\n\t\t\tdist = Surface.DistanceTo(floor,pt)\r\n\t\t\tif dist == 0:\r\n\t\t\t\tipts.append(pt)\r\n\tpts.append(ipts)\r\nscolumns =[]\t\r\ncolumns = []\r\nfor j in range(pls.Count -1):\r\n\tptsThisFloor = pts[j]\r\n\tptsNextFloor = pts[j+1]\r\n\ticolumns = []\r\n\tfor pt1 in ptsThisFloor:\r\n\t\tfor pt2 in ptsNextFloor:\r\n\t\t\tif comparePtsOnFloors(pt1,pt2) == 1:\r\n\t\t\t\tcol = Line.ByStartPointEndPoint(pt1,pt2)\r\n\t\t\t\tsec = Circle.ByCenterPointRadius(pt1,0.1)\r\n\t\t\t\tvec = Vector.ByTwoPoints(pt1,pt2)\r\n\t\t\t\tsol = Curve.ExtrudeAsSolid(sec,vec)\r\n\t\t\t\tscolumns.append(sol)\r\n\t\t\t\ticolumns.Add(col)\r\n\tcolumns.append(icolumns)\r\n# Assign your output to the OUT variable.\r\nOUT = [pts,columns,scolumns]",
+      "VariableInputPorts": true,
+      "Id": "3168ec47662e40bdb5380d6ee04b9d1d",
+      "Inputs": [
+        {
+          "Id": "52cc6310f5f9466ba89ec685656e9d60",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "876628e230054c45ad148b6a28bd5efa",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5e44e2297da8420baaed16cdb9b09874",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "xspan = 8;\nyspan = 8;\nspans = [xspan,yspan];",
+      "Id": "9b01d39bfdcd450ca2bf39bf77d37e6f",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "2a734a0eb47e4c97b8b811d3b581dc7a",
+          "Name": "",
+          "Description": "xspan",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b6cf7922d033404a980d6ea6eefb5d63",
+          "Name": "",
+          "Description": "yspan",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4c4fcc15dddb421ab3a3bb1198bd3fe1",
+          "Name": "",
+          "Description": "spans",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\ndef find_middle_curve(curve_t, curve_b):\r\n\tpt_b = curve_b.PointAtParameter(0)\r\n\tpt_t = curve_t.PointAtParameter(0)\r\n\tline = Line.ByStartPointEndPoint(pt_b, pt_t)\r\n\tpt_m = line.PointAtParameter(0.5)\r\n\tvec = Vector.ByTwoPoints(pt_b, pt_m)\r\n\tcurve_m = Curve.Translate(curve_b, vec)\r\n\treturn curve_m\r\n\r\ndef frange(n):\r\n\tstep = 1/float(n)\r\n\to_list = []\r\n\tfor i in range(int(n)):\r\n\t\to_list.append(i*step)\r\n\treturn o_list\r\n\r\ndef create_pipe(line, diam):\r\n\tst_pt = line.PointAtParameter(0)\r\n\tend_pt = line.PointAtParameter(1)\r\n\tn_vec = Vector.ByTwoPoints(st_pt, end_pt)\r\n\tplane = Plane.ByOriginNormal(st_pt, n_vec)\r\n\tcircle_1 = Circle.ByPlaneRadius(plane, diam/2)\r\n\tsolid = Curve.ExtrudeAsSolid(circle_1, n_vec)\r\n\treturn solid\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\n#Inputs\r\ninput_floors = IN[0]\r\n\r\nfloor_edge_surfaces = []\r\nfloor_curves = []\r\nfloor_anch_points = []\r\nfacade_c_points = []\r\nconn_pipes = []\r\nconn_bowls = []\r\n\r\nn_anch_points = IN[1]\r\noffset_connectors = IN[2]\r\ndia_pipes = IN[3]\r\nsphere_dia = IN[4]\r\n\r\nfacade_pipe_dia = 0.2\r\nbeam_pipe_dia = 0.2\r\n\r\nfor floor in input_floors:\r\n\tf_solids = Solid.Explode(floor)\r\n\tfloor_edge_surface = f_solids[0]\r\n\tfloor_edge_surfaces.append(floor_edge_surface)\r\n\tfloor_i_curves = Surface.PerimeterCurves(floor_edge_surface)\r\n\tfloor_curves.append(floor_i_curves[0])\r\n\tcurve_m = find_middle_curve(floor_i_curves[0],floor_i_curves[2])\r\n\tfloor_curves.append(curve_m)\r\n\tfloor_curves.append(floor_i_curves[2])\r\n\tparam_list = frange(n_anch_points)\r\n\t\r\n\tfloor_i_anch_points = []\r\n\tfacade_i_c_points = []\r\n\tconn_i_pipes = []\r\n\tconn_i_bowls = []\r\n\t\r\n\tfor p in param_list:\r\n\t\tanch_pt = curve_m.PointAtParameter(p)\r\n\t\tfloor_i_anch_points.append(anch_pt)\r\n\t\tvec_normal = Surface.NormalAtPoint(floor_edge_surface, anch_pt)\r\n\t\tconn_pt = Point.Translate(anch_pt, vec_normal, offset_connectors)\r\n\t\tfacade_i_c_points.append(conn_pt)\r\n\t\tconn_line = Line.ByStartPointEndPoint(anch_pt, conn_pt)\r\n\t\tconn_pipe = create_pipe(conn_line, dia_pipes)\r\n\t\tconn_i_pipes.append(conn_pipe)\r\n\t\tconn_bowl = Sphere.ByCenterPointRadius(conn_pt, sphere_dia/2)\r\n\t\tconn_i_bowls.append(conn_bowl)\r\n\t\t\r\n\tconn_bowls.append(conn_i_bowls)\r\n\tconn_pipes.append(conn_i_pipes)\r\n\tfloor_anch_points.append(floor_i_anch_points)\r\n\tfacade_c_points.append(facade_i_c_points)\r\n\r\nlist = []\r\nfacade_cols = []\r\nfacade_beams = []\r\n\r\nfor i in range(facade_c_points.Count-1):\r\n\tfor j in range(facade_c_points[i].Count):\r\n\t\tpt_bt_fl = facade_c_points[i][j]\r\n\t\tpt_tp_fl = facade_c_points[i+1][j]\r\n\t\tv_line = Line.ByStartPointEndPoint(pt_bt_fl, pt_tp_fl)\r\n\t\tfacade_col = create_pipe(v_line, facade_pipe_dia/2)\r\n\t\tfacade_cols.append(facade_col)\t\r\n\r\nfor i in range(facade_c_points.Count):\r\n\tfacade_c_points[i].append(facade_c_points[i][0])\r\n\tfor j in range(facade_c_points[i].Count-1):\r\n\t\tpt_bt_fl = facade_c_points[i][j]\r\n\t\tpt_tp_fl = facade_c_points[i][j+1]\r\n\t\th_line = Line.ByStartPointEndPoint(pt_bt_fl, pt_tp_fl)\r\n\t\tfacade_beam = create_pipe(h_line, beam_pipe_dia/2)\r\n\t\tfacade_beams.append(facade_beam)\r\n\t\r\n# Assign your output to the OUT variable.\r\n#OUT = [floor_anch_points, facade_c_points, conn_pipes, conn_bowls]\r\nOUT = [facade_cols, facade_beams, conn_bowls, conn_pipes]",
+      "VariableInputPorts": true,
+      "Id": "342f8d9885b94a71b9e62ae536995764",
+      "Inputs": [
+        {
+          "Id": "0d3b5cb245c943408256eef6d38b1051",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0232e64b710b4b9f9471a9aa865d86bf",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "da03d86f2fc14bc8979cf90c85f24263",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5e25bae28f7240e1a283dc12eb27656b",
+          "Name": "IN[3]",
+          "Description": "Input #3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "45694d98a78d429aac9dc5b993e71910",
+          "Name": "IN[4]",
+          "Description": "Input #4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5ff84e93aaca46109045c03d0385213b",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "ed16dcc83f4c493cb5ab79282176b842",
+      "Inputs": [
+        {
+          "Id": "7cfd5c476d3948c9a61c3b1fc62b5154",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e7c05bd691a84b2c8e4006f8b8310286",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "5;\n0.7;\n0.1;\n0.4;",
+      "Id": "2b2e10be8c394061a1d2cd0d1a30b023",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "7bf1f755293f4ed9a18f7a3c528e6e4e",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "428e39d1778b49ddbe091e31618bf3a0",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "55a4a010e7ee4ba9abfafe163d986801",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5b26efa517f041b1895091cf33809753",
+          "Name": "",
+          "Description": "Value of expression at line 4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "pts;",
+      "Id": "b7aaf9c1b5ab462496ce4d91cedae025",
+      "Inputs": [
+        {
+          "Id": "22b56b4109d3415cb470e333036c30cc",
+          "Name": "pts",
+          "Description": "pts",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "fd950d50a755418facb5da50875a8599",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "pt1 = Point.ByCoordinates(0,0,0);\npt2 = Point.ByCoordinates(0,0,20);\npt3 = Point.ByCoordinates(0,0,40);\n\npts = [pt1,pt3];\n\ncir1 = Circle.ByCenterPointRadius(pt1,10);\ncir2 = Circle.ByCenterPointRadius(pt2,14);\ncir3 = Circle.ByCenterPointRadius(pt3,20);\n\npol1 = Polygon.RegularPolygon(cir1, 15);\npol2 = Polygon.RegularPolygon(cir2, 15);\npol3 = Polygon.RegularPolygon(cir3, 15);\n\ncirs = [cir1, cir2, cir3];\npolygons = [pol1, pol2, pol3];\n\n//srf = Surface.ByLoft(polygons);\nsrf = Surface.ByLoft(cirs);\nnFls = 10;",
+      "Id": "4b55d4fdc7134da5b363889f9f2f63e2",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "79a1bc216c014bb1a187a5d934a71a74",
+          "Name": "",
+          "Description": "pt1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "18e86175defc42c18a447352d0c56881",
+          "Name": "",
+          "Description": "pt2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d7b5adb0388c40a29c06bf53322e0334",
+          "Name": "",
+          "Description": "pt3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "634ba6658b30460db48d909f59ac30f1",
+          "Name": "",
+          "Description": "pts",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2b05da00578c469e9eb78a2ebca864f3",
+          "Name": "",
+          "Description": "cir1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "10c0ab36e72c45ff8fb73ada0c699594",
+          "Name": "",
+          "Description": "cir2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "29329dddb39e48bda184bf02e805bf29",
+          "Name": "",
+          "Description": "cir3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4723f6c163904f77892663e6bf60d4ae",
+          "Name": "",
+          "Description": "pol1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5af80e20f20f4120be92d49b7a2e26c8",
+          "Name": "",
+          "Description": "pol2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "11f8ca9dd4614b8cab48b6a16b860554",
+          "Name": "",
+          "Description": "pol3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "66e8b59869154eafb87d3274aae51e62",
+          "Name": "",
+          "Description": "cirs",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cce0df6db83a409aa08a8735ee35da52",
+          "Name": "",
+          "Description": "polygons",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "95caaf0d96bd4df3b75ee1d13ab1a223",
+          "Name": "",
+          "Description": "srf",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "66c35333c68b4a5b9cff36081fa34a98",
+          "Name": "",
+          "Description": "nFls",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\ndef createZcoordFloors(ptB, ptT, nFloors):\r\n\tdist = Point.DistanceTo(ptB,ptT)\r\n\tspan = dist/nFloors\r\n\ti =0\r\n\tzcord=ptB.Z\r\n\tzcords = []\r\n\twhile i< 1000:\r\n\t\tif zcord > ptT.Z:\r\n\t\t\tbreak\r\n\t\telse:\r\n\t\t\tzcords.append(zcord)\r\n\t\ti += 1\r\n\t\tzcord = zcord + span\r\n\treturn [zcords,span]\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\npts = IN[0]\r\nsrf = IN[1]\r\nnFl = IN[2]\r\n# Place your code below this line\r\nzcords = createZcoordFloors(pts[0],pts[1], nFl)\r\nfloorH = zcords[1]\r\n\r\nplns = []\r\ncrvs = []\r\nsrfs = []\r\nsols = []\r\nfor z in zcords[0]:\r\n\tvecZ = Vector.ByCoordinates(0,0,1)\r\n\tori = Point.ByCoordinates(0,0,z)\r\n\t\r\n\tpln = Plane.ByOriginNormal(ori, vecZ)\r\n\tplns.append(pln)\r\n\t\r\n\tcrv = Plane.Intersect(pln,srf)[0]\r\n\tcrvs.append(crv)\r\n\t\r\n\tnsrf = Surface.ByPatch(crv)\r\n\tsrfs.append(nsrf)\r\n\t\r\n\tsol = Curve.ExtrudeAsSolid(crv,0.2)\r\n\tsols.append(sol)\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = [plns,crvs,srfs,sols]",
+      "VariableInputPorts": true,
+      "Id": "9fdffddd165041fb82caded87acc57ea",
+      "Inputs": [
+        {
+          "Id": "eaf51ec46f5a4abb876a3d4f08b55b5c",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c4975797605f40daa98df6e78aec21d0",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e5f60f82917a4ca99f1410d6e995f691",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3c2589329abd43fdad0e2f3b1c4a9040",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "planes =a[0];\ncurves =a[1];\n//surfaces =a[2];\n//solidsFloors =a[3];\n\n\n//srf = surfaces[2];\n//columnPoints = b[0];\n//columnLines = b[1];\n//columnSolids = b[2];",
+      "Id": "9924c0d02ffe4c39941954b7e5545f85",
+      "Inputs": [
+        {
+          "Id": "c38f61e177eb4c7193bf2a14fb7d81e9",
+          "Name": "a",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0932c1c2749a45aeab9dad697227cb20",
+          "Name": "",
+          "Description": "planes",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "37c53d74245844578373434742561ae3",
+          "Name": "",
+          "Description": "curves",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "crvs;",
+      "Id": "3251d9de78a847cb84ba0fd77132bc29",
+      "Inputs": [
+        {
+          "Id": "88ed767a8e8944eeaa30a811e79b21bd",
+          "Name": "crvs",
+          "Description": "crvs",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2ef1a2c04d5f4e0c94d9390940d8f245",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\ncurves = IN[0]\r\nnPolyDeg = IN[1]\r\nit = IN[2]\r\nplanes = IN[3]\r\n# Place your code below this line\r\niter = [x*it for x in range(0, nPolyDeg)]\r\n\r\npointList = []\r\nnsurfaces = []\r\nsols = []\r\nfor n, curve in enumerate(curves):\r\n\tpoints=[]\r\n\tfor i in iter:\r\n\t\tif n == 0:\r\n\t\t\tp = Curve.PointAtParameter(curve, i+0.07)\r\n\t\telse:\r\n\t\t\tp = Curve.PointAtParameter(curve, i)\r\n\t\tpoints.append(p)\r\n\tpoly = Polygon.ByPoints(points)\r\n\tnsrf = Surface.ByPatch(poly)\r\n\tnsurfaces.append(nsrf)\r\n\tsol = Curve.ExtrudeAsSolid(poly,0.2)\r\n\tsols.append(sol)\r\n\tpointList.append(points)\r\n# Assign your output to the OUT variable.\r\nOUT = [planes, curves, nsurfaces, sols, pointList]",
+      "VariableInputPorts": true,
+      "Id": "a5b1852746f3405a8e0063ff4720f446",
+      "Inputs": [
+        {
+          "Id": "73fe4657ee8744ad98ad17b0ad3b54bc",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3b4c0dca839949d39ae3a7c344d4cf41",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "95980af83353473bb993e6b2c85d7bd3",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ffa97f7921a2486d834efe06f6524883",
+          "Name": "IN[3]",
+          "Description": "Input #3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8514d11d846e4209a5094265448c6c54",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "n;\n1/n;",
+      "Id": "b9169afe940344be86fffc5d3619b1f4",
+      "Inputs": [
+        {
+          "Id": "b82c349fcf854a2b974deb21476e02b5",
+          "Name": "n",
+          "Description": "n",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c36b73c6eaec490aa3e3c7fe20905424",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "736e40ac284d4534859c3bd6dd30bf20",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n\r\ndef createDomain(min,max,step):\r\n\tdomain = [0]\r\n\ti=0\r\n\tnumber1 = 0\r\n\tnumber2 = 0\r\n\twhile i < 100:\r\n\t\ti +=1\r\n\t\tnumber1 = number1 + step\r\n\t\tnumber2 = number2 - step\r\n\t\tif number1 <= max:\r\n\t\t\tdomain.append(number1)\r\n\t\t\r\n\t\tif number2 >= min:\r\n\t\t\tdomain.append(number2)\r\n\t\t\r\n\tdomain.sort()\r\n\treturn domain\r\n\t\r\ndef comparePtsOnFloors(pt1,pt2):\r\n\tres = 0\r\n\tif pt1.X == pt2.X and pt1.Y == pt2.Y:\r\n\t\tres = 1\r\n\treturn res\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\npls = IN[0][0]\r\nedges = IN[0][1]\r\nfloors = IN[0][2]\r\nspanX = IN[1][0]\r\nspanY = IN[1][1]\r\n# Place your code below this line\r\n\r\npts = []\r\n\r\n\r\nfor i in range(pls.Count):\r\n\tpl = pls[i]\r\n\tfloor = floors[i]\r\n\tbob = BoundingBox.ByGeometry(floor)\r\n\tpb1 = bob.MinPoint\r\n\tpb2 = bob.MaxPoint\r\n\tdomainX = createDomain(pb1.X, pb2.X, spanX)\r\n\tdomainY = createDomain(pb1.Y, pb2.Y, spanY)\r\n\tipts = []\r\n\tfor ix in domainX:\r\n\t\tfor jy in domainY:\r\n\t\t\tpt = Point.ByCoordinates(ix,jy, pl.Origin.Z)\r\n\t\t\tdist = Surface.DistanceTo(floor,pt)\r\n\t\t\tif dist == 0:\r\n\t\t\t\tipts.append(pt)\r\n\tpts.append(ipts)\r\nscolumns =[]\t\r\ncolumns = []\r\nfor j in range(pls.Count -1):\r\n\tptsThisFloor = pts[j]\r\n\tptsNextFloor = pts[j+1]\r\n\ticolumns = []\r\n\tfor pt1 in ptsThisFloor:\r\n\t\tfor pt2 in ptsNextFloor:\r\n\t\t\tif comparePtsOnFloors(pt1,pt2) == 1:\r\n\t\t\t\tcol = Line.ByStartPointEndPoint(pt1,pt2)\r\n\t\t\t\tsec = Circle.ByCenterPointRadius(pt1,0.1)\r\n\t\t\t\tvec = Vector.ByTwoPoints(pt1,pt2)\r\n\t\t\t\tsol = Curve.ExtrudeAsSolid(sec,vec)\r\n\t\t\t\tscolumns.append(sol)\r\n\t\t\t\ticolumns.Add(col)\r\n\tcolumns.append(icolumns)\r\n# Assign your output to the OUT variable.\r\nOUT = [pts,columns,scolumns]",
+      "VariableInputPorts": true,
+      "Id": "5d060a57a5db433794281fe31e744f65",
+      "Inputs": [
+        {
+          "Id": "3fd27ada66484c1b8c5726be2c548755",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9ba967e7218b49c38967b86516ec991b",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "267dcfd6a9d2482f8c0b693aabecc15d",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\ndef find_middle_curve(curve_t, curve_b):\r\n\tpt_b = curve_b.PointAtParameter(0)\r\n\tpt_t = curve_t.PointAtParameter(0)\r\n\tline = Line.ByStartPointEndPoint(pt_b, pt_t)\r\n\tpt_m = line.PointAtParameter(0.5)\r\n\tvec = Vector.ByTwoPoints(pt_b, pt_m)\r\n\tcurve_m = Curve.Translate(curve_b, vec)\r\n\treturn curve_m\r\n\r\ndef frange(n):\r\n\tstep = 1/float(n)\r\n\to_list = []\r\n\tfor i in range(int(n)):\r\n\t\to_list.append(i*step)\r\n\treturn o_list\r\n\r\ndef create_pipe(line, diam):\r\n\tst_pt = line.PointAtParameter(0)\r\n\tend_pt = line.PointAtParameter(1)\r\n\tn_vec = Vector.ByTwoPoints(st_pt, end_pt)\r\n\tplane = Plane.ByOriginNormal(st_pt, n_vec)\r\n\tcircle_1 = Circle.ByPlaneRadius(plane, diam/2)\r\n\tsolid = Curve.ExtrudeAsSolid(circle_1, n_vec)\r\n\treturn solid\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\n#Inputs\r\ninput_floors = IN[0]\r\n\r\nfloor_edge_surfaces = []\r\nfloor_curves = []\r\nfloor_anch_points = []\r\nfacade_c_points = []\r\nconn_pipes = []\r\nconn_bowls = []\r\n\r\nn_anch_points = IN[1]\r\noffset_connectors = IN[2]\r\ndia_pipes = IN[3]\r\nsphere_dia = IN[4]\r\ninPoints = IN[5]\r\n\r\n\r\nfacade_pipe_dia = 0.2\r\nbeam_pipe_dia = 0.2\r\n\r\ncolumn_list = []\r\nbeam_list = []\r\nconn_bowls = []\r\nfor i in range(len(inPoints)-1):\r\n\ti_cols = []\r\n\tfor j in range(len(inPoints[i])):\r\n\t\tline = Line.ByStartPointEndPoint(inPoints[i][j], inPoints[i+1][j])\r\n\t\ti_cols.append(create_pipe(line, beam_pipe_dia))\r\n\t\tif i == len(inPoints)-2 and j < len(inPoints[i])-1:\r\n\t\t\tline = Line.ByStartPointEndPoint(inPoints[i][j], inPoints[i+1][j+1])\r\n\t\t\ti_cols.append(create_pipe(line, beam_pipe_dia))\r\n\tcolumn_list.append(i_cols)\r\n\r\nfor i in range(len(inPoints)):\r\n\ti_beams = []\r\n\tfor j in range(len(inPoints[i])-1):\r\n\t\tline = Line.ByStartPointEndPoint(inPoints[i][j], inPoints[i][j+1])\r\n\t\ti_beams.append(create_pipe(line, beam_pipe_dia))\r\n\t\tif j == len(inPoints[i])-2:\r\n\t\t\tline = Line.ByStartPointEndPoint(inPoints[i][0], inPoints[i][j+1])\r\n\t\t\ti_beams.append(create_pipe(line, beam_pipe_dia))\r\n\tbeam_list.append(i_beams)\r\n\r\nfor pointList in inPoints:\r\n\ti_conn_bowls = []\r\n\tfor point in pointList:\r\n\t\tSphere = Sphere.ByCenterPointRadius(point, sphere_dia/2)\r\n\t\ti_conn_bowls.append(Sphere)\t\r\n\tconn_bowls.append(i_conn_bowls)\r\nOUT = column_list, beam_list, conn_bowls\t",
+      "VariableInputPorts": true,
+      "Id": "cf303ae5c173454f881f97a7eeb2e107",
+      "Inputs": [
+        {
+          "Id": "0307f7afb3ca4286b3ab28e955b61ab1",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5655f5dcffbf40cc87f620c97e4554cc",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "377ce8e5c112469e8a3e033d76b37a3a",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a0b13d7e7cb747af81a0e68f6343eaf2",
+          "Name": "IN[3]",
+          "Description": "Input #3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7b6478fce0474fa9b1095e466cbbc401",
+          "Name": "IN[4]",
+          "Description": "Input #4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "41816e6770a742b5a45ca5ee61f18470",
+          "Name": "IN[5]",
+          "Description": "Input #5",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "34ce48ebb10c421ea1ed59208bf4fcbe",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "//planes =a[0];\n//curves =a[1];\n//surfaces =a[2];\nsolidsFloors =a[3];\n\n//columnPoints = b[0];\n//columnLines = b[1];\n//columnSolids = b[2];",
+      "Id": "46a0e24ea5ee4a57959360f48f7a39bb",
+      "Inputs": [
+        {
+          "Id": "f267b7e6f8fe46459c7ac58079cb6c5a",
+          "Name": "a",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6c13f789dd0b479da10d6093db7af5fb",
+          "Name": "",
+          "Description": "solidsFloors",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "points = OUT[4];",
+      "Id": "2fcb805e48d4466faa76379be81cb37d",
+      "Inputs": [
+        {
+          "Id": "5cc28ac49d794001a6b283917a917d33",
+          "Name": "OUT",
+          "Description": "OUT",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "bf566144d6ab4ddea76418d5e1f36ab4",
+          "Name": "",
+          "Description": "points",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "xspan;\nyspan;\nspans = [xspan,yspan];",
+      "Id": "9d731941282a4ef6804bd1145868cee3",
+      "Inputs": [
+        {
+          "Id": "64033f06dbb04239b2a933bdf6eae890",
+          "Name": "xspan",
+          "Description": "xspan",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "403cc39c685140198935ec4a29395624",
+          "Name": "yspan",
+          "Description": "yspan",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "43ad10cbcd9a46f1a26b75e5949e05a6",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0ef3eaf465914dc99a55aa5bb3066081",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1a93134ed8984d0abdb111688e086fff",
+          "Name": "",
+          "Description": "spans",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.IntegerSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Integer",
+      "InputValue": 10,
+      "MaximumValue": 10,
+      "MinimumValue": 0,
+      "StepValue": 1,
+      "Id": "cfe99e0214f14f1f970d5791f7c26736",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "0f935393c971411d8c117a1f0ad6e614",
+          "Name": "",
+          "Description": "Int32",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces integer values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 1.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.1,
+      "InputValue": 0.30000000000000004,
+      "Id": "1f989ff78221411392cf3801567343aa",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "9adb35ee6cd948ddb0100bb7ef9be1b8",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 1.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.1,
+      "InputValue": 0.60000000000000009,
+      "Id": "425ab639924148dcaadadf69483eb3cc",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "7906965c41bc43eab8ff383906c38e61",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0.1;\ndia_pipes;\n0.4;\ndia_s;",
+      "Id": "b595aab8407e4e3b8163d978b7d7745f",
+      "Inputs": [
+        {
+          "Id": "06ef253e4e074227b142ee95724f8da5",
+          "Name": "dia_pipes",
+          "Description": "dia_pipes",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8debfafef04c4790bde3b3144edbbdb0",
+          "Name": "dia_s",
+          "Description": "dia_s",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "352a43f81bc2452c8d6631f2f64b417a",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "03ef8900ad2749048d66e970add8b600",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "29c3505e63bd425a936b9ee7046dae36",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9bb8cea550744d8eace21da9b1477d53",
+          "Name": "",
+          "Description": "Value of expression at line 4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.IntegerSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Integer",
+      "InputValue": 4,
+      "MaximumValue": 10,
+      "MinimumValue": 0,
+      "StepValue": 1,
+      "Id": "aea44188c5a84d199055b3ce46ff586a",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "561bb3a16d8c460abd553ba6fd0470f2",
+          "Name": "",
+          "Description": "Int32",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces integer values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.IntegerSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Integer",
+      "InputValue": 6,
+      "MaximumValue": 10,
+      "MinimumValue": 0,
+      "StepValue": 1,
+      "Id": "1a6c96aa062247caae94adfc2b95c0f2",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "7a1ce50d6cd14db4a4cd292b37026beb",
+          "Name": "",
+          "Description": "Int32",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces integer values."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "ptsTopFloor = points[-1];",
+      "Id": "df427355424741f1b4c0980e10ac1a1b",
+      "Inputs": [
+        {
+          "Id": "b67ad54aaaf045cf88f7ca9d1f15dade",
+          "Name": "points",
+          "Description": "points",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1ff9caa63a4246d9b333ad301a728b6c",
+          "Name": "",
+          "Description": "ptsTopFloor",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Circle.ByBestFitThroughPoints@Autodesk.DesignScript.Geometry.Point[]",
+      "Id": "5341d193ee1841baa8f078520462c397",
+      "Inputs": [
+        {
+          "Id": "aa1642133ebe4c9dba344de501fd8e5d",
+          "Name": "points",
+          "Description": "Points to fit\n\nPoint[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2f83448d9f994de7bdb0d3afb2a67aa3",
+          "Name": "Circle",
+          "Description": "Circle",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Best fit Circle through Points\n\nCircle.ByBestFitThroughPoints (points: Point[]): Circle"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Circle.CenterPoint",
+      "Id": "449771fa98f84b839e20fbcd430d44f2",
+      "Inputs": [
+        {
+          "Id": "e1b3786bdd3e4a878c12edc6dfece41d",
+          "Name": "circle",
+          "Description": "Autodesk.DesignScript.Geometry.Circle",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2017a235165c4539b710c604dcd09b43",
+          "Name": "Point",
+          "Description": "Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "The center of the circle\n\nCircle.CenterPoint: Point"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "circ;\nr = circ.Radius;",
+      "Id": "acb5942b38dc4d26b6de5b055cf0e7b2",
+      "Inputs": [
+        {
+          "Id": "51c8a946930d47d980c8b0553401f46d",
+          "Name": "circ",
+          "Description": "circ",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "85ada312df7249c69fe258188760c81b",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6e2b077499b743719baf8776f5537a69",
+          "Name": "",
+          "Description": "r",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "nCircles = 8;",
+      "Id": "66f7f36f89e641909c21ec682dd75a37",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "4f6621666ff04030a9a0c808c4143c29",
+          "Name": "",
+          "Description": "nCircles",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\ncircle = IN[0]\r\nmidPt = IN[1]\r\nr = IN[2]\r\nnCircs = IN[3]\r\nn = IN[4]\r\nit_vect = IN[5]\r\n# Place your code below this line\r\ni = round(r)\r\nit = round(r/nCircs)\r\n\r\ncircleList = []\r\npolList = []\r\nptsList = []\r\nlinesList = []\r\npol = Polygon.RegularPolygon(circle, n)\r\npolList.append(pol)\r\nwhile i > it+1:\r\n\ti-=it\r\n\tcircle = Circle.ByCenterPointRadius(midPt, i)\r\n\tpol = Polygon.RegularPolygon(circle, n)\r\n\tcircleList.append(circle)\r\n\tpolList.append(pol)\r\n\t\r\nfor polygon in polList:\r\n\tpts = []\r\n\tfor i in it_vect:\r\n\t\tpt = Curve.PointAtParameter(polygon, i)\r\n\t\tpts.append(pt)\r\n\tptsList.append(pts)\r\n\t\r\nfor i in range(len(ptsList)-1):\r\n\tlines = []\r\n\tfor j in range(len(ptsList[i])):\r\n\t\tline = Line.ByStartPointEndPoint(ptsList[i][j], ptsList[i+1][j])\r\n\t\tlines.append(line)\r\n\t\t#if i == len(ptsList)-2:\r\n\t\t#\tline = Line.ByStartPointEndPoint(ptsList[i+1][j], midPt)\r\n\t\t#\tlines.append(line)\r\n\tlinesList.append(lines)\r\n\r\nfor i in range(len(ptsList)):\r\n\tlines = []\r\n\tfor j in range(len(ptsList[i])-1):\r\n\t\tline = Line.ByStartPointEndPoint(ptsList[i][j], ptsList[i][j+1])\r\n\t\tlines.append(line)\r\n\t\tif i == len(ptsList)-2:\r\n\t\t\tline = Line.ByStartPointEndPoint(ptsList[i+1][j], midPt)\r\n\t\t\tlines.append(line)\r\n\tlinesList.append(lines)\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = ptsList, linesList",
+      "VariableInputPorts": true,
+      "Id": "42be97be1aa54943b3e4d6742e85e14f",
+      "Inputs": [
+        {
+          "Id": "3b39eca42a34442e89a3cb572ef48ecb",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9360aca905964ed5853f1df7f89876d0",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "af3852b2d2064c5d8500e58641e889df",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fc06d01297864f089db4489e91686247",
+          "Name": "IN[3]",
+          "Description": "Input #3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "691374e4d6b7473eb9ad94b8df06c425",
+          "Name": "IN[4]",
+          "Description": "Input #4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "529f6a5b5b8e46f9ab87840be4b9b253",
+          "Name": "IN[5]",
+          "Description": "Input #5",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6d00022813014f55a26d63683845e28b",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "it = 0..1..#u;",
+      "Id": "b5cab5b3f6cb4946aab2a0d5ca2a3939",
+      "Inputs": [
+        {
+          "Id": "e5a66b09aab94118a3ad9e2f8d40a877",
+          "Name": "u",
+          "Description": "u",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2bc62bb204f04aceba5a67c7b8ecf379",
+          "Name": "",
+          "Description": "it",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "20;",
+      "Id": "f596d2d27c8f43d8a71c679b8a62d8d9",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "fff4f87e82914885b5ad7c486fdc973a",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "pts = out[0][0];",
+      "Id": "f7ec7f79714c424d917262918357f7f5",
+      "Inputs": [
+        {
+          "Id": "96e78c45f67c4bc9afe539d95fb91ca9",
+          "Name": "out",
+          "Description": "out",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "cec40cbc56164c88adb426550c3f59f9",
+          "Name": "",
+          "Description": "pts",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "lines = out[1];",
+      "Id": "df345c8e1a1a4fef9d63cea5be8b65e6",
+      "Inputs": [
+        {
+          "Id": "85f30824bb164d82ab0e043681d4790f",
+          "Name": "out",
+          "Description": "out",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "026eecdcc55c48b4b317f68a6833b0ad",
+          "Name": "",
+          "Description": "lines",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Count@var[]..[]",
+      "Id": "e9eb0a364548417e87846e054e815f12",
+      "Inputs": [
+        {
+          "Id": "c39619b3b4b5467e801f982749a3b0c6",
+          "Name": "list",
+          "Description": "List to get the item count of.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8a287db4bd3b4a6c9ca0634a58744efc",
+          "Name": "count",
+          "Description": "List length.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns the number of items stored in the given list.\n\nList.Count (list: var[]..[]): int"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Flatten@var[]..[],int",
+      "Id": "c5e6f771c16441088cfe99fdb84afbef",
+      "Inputs": [
+        {
+          "Id": "3bd963392b0b4da3ba18b7410edff6b3",
+          "Name": "list",
+          "Description": "List to flatten.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "75acb6fd8cc049bebc451c5de40acccd",
+          "Name": "amt",
+          "Description": "Layers of nesting to remove.\n\nint\nDefault value : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "48a9a49ee8c64cdf8b745ef567b76648",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Flattens a nested list of lists by a certain amount.\n\nList.Flatten (list: var[]..[], amt: int = -1): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "l;\nq = 1..1..#l;",
+      "Id": "461f5ee7081c4f34aec2a8f1141c1551",
+      "Inputs": [
+        {
+          "Id": "cc96c32b17334e26a51ed7fad96f0a19",
+          "Name": "l",
+          "Description": "l",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d1a098e8c0a04cb8b28c63dd1e9b0adb",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "abbab87c5a2b44b388f0f82b96c90125",
+          "Name": "",
+          "Description": "q",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\n# Place your code below this line\r\nlines = IN[0]\r\nq = IN[1]\r\n\r\n#create class\r\nclass Pair():\r\n\tcount = 0\r\n\t#Constructor\r\n\tdef __init__(self, _line, _ratio):\r\n\t\t#Properties\r\n\t\tself.Id = Pair.count\r\n\t\tself.line = _line\r\n\t\tself.ratio = _ratio\r\n\t\t\r\n\t\tPair.count += 1\r\n\r\n#Create a list of lines and branch force density\r\nlines_and_q = [Pair(lines[i], q[i]) for i in range(len(lines))]\r\n\r\n# Assign your output to the OUT variable.\r\n#OUT = lines_and_q\r\nOUT = lines_and_q",
+      "VariableInputPorts": true,
+      "Id": "58aa0bb1357048cabf03a69c31b8e5f7",
+      "Inputs": [
+        {
+          "Id": "03010d5ae94a423cb4141985dbcca0c2",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "57fc6602987748b4a85fe35781fabe64",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "37c1a7781bb14a9ca4ef5e6fb0771683",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "f_vec = Vector.ByCoordinates(0, 0, 0.3);",
+      "Id": "7012df4fd2d04be595a5e9d95be7a240",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f3b2f1bff9a14660913bdf3f940fd58f",
+          "Name": "",
+          "Description": "f_vec",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.Filename, CoreNodeModels",
+      "HintPath": "C:\\Users\\PewPe\\OneDrive - NTNU\\Personlig skole\\5. Klasse\\Høst\\TKT4198\\Form Finding\\MathNet.Numerics.dll",
+      "InputValue": "..\\..\\TKT4198\\Form Finding\\MathNet.Numerics.dll",
+      "NodeType": "ExtensionNode",
+      "Id": "db0391d465c2457b9b4d8830ac56a35a",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "98d69d7858274c6ba8a49c3463dfd709",
+          "Name": "",
+          "Description": "Filename",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows you to select a file on the system to get its filename"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\nfrom clr import AddReferenceToFileAndPath as addref\r\n\r\ndataEnteringNode = IN\r\n\r\npath = IN[3]\r\naddref(path)\r\nimport MathNet.Numerics.LinearAlgebra as la\r\n\r\n#Input\r\nbranches = IN[0]\r\nsupPts = IN[1]\r\nforce_vec = IN[2]\r\n\r\n#Functions\r\ndef sorted_points(branches, sup_pts):\r\n\tsortedPts = []\r\n\tsortedPts += sup_pts\r\n\t\r\n\tfor b in branches:\r\n\t\tsPt = b.line.StartPoint\r\n\t\tePt = b.line.EndPoint\r\n\t\taddit1 = 1\r\n\t\taddit2 = 1\r\n\t\tfor p in sortedPts:\r\n\t\t\tif (p.DistanceTo(sPt) < 0.001):\r\n\t\t\t\taddit1 = 0\r\n\t\t\tif (p.DistanceTo(ePt) < 0.001):\r\n\t\t\t\taddit2 = 0\r\n\t\tif (addit1 == 1):\r\n\t\t\tsortedPts.append(sPt)\r\n\t\tif (addit2 == 1):\r\n\t\t\tsortedPts.append(ePt)\r\n\tdel sortedPts[:len(supPts)]\r\n\treturn (sortedPts+supPts)\r\n\t\r\n\t\r\ndef branch_Node_matrix(branches, sortedPts):\r\n\tc = la.Double.Matrix.Build.Dense(len(branches), len(sortedPts))\r\n\t\r\n\t#Filling in correct indexes\r\n\tfor b in branches:\r\n\t\trow = b.Id \r\n\t\tsPt = b.line.StartPoint\r\n\t\tePt = b.line.EndPoint\r\n\t\tcol1 = 0\r\n\t\tcol2 = 0\r\n\t\ti = 0\r\n\t\t\r\n\t\tfor p in sortedPts:\r\n\t\t\tif sPt.DistanceTo(p) < 0.001:\r\n\t\t\t\tcol1 = i\r\n\t\t\tif ePt.DistanceTo(p) < 0.001:\r\n\t\t\t\tcol2 = i\t\r\n\t\t\ti += 1\r\n\t\t\t\r\n\t\tc[row, col1] = 1\r\n\t\tc[row, col2] = -1\r\n\treturn c\r\n\r\ndef force_density_vector(branches):\r\n\tq = la.Double.Vector.Build.Dense(len(branches))\r\n\t\r\n\tfor i in range(len(branches)):\r\n\t\tq[i] = branches[i].ratio\r\n\treturn q\r\n\r\ndef CoordinateVectors(sortedPts):\r\n\tv = la.Double.Vector.Build\r\n\tx = v.Dense(len(sortedPts))\r\n\ty = v.Dense(len(sortedPts))\r\n\tz = v.Dense(len(sortedPts))\r\n\tfor i in range(len(sortedPts)):\r\n\t\tx[i] = sortedPts[i].X\r\n\t\ty[i] = sortedPts[i].Y\t\t\r\n\t\tz[i] = sortedPts[i].Z\r\n\treturn [x, y, z]\r\n\r\ndef dMatrices(cMat, qVec, supPts):\r\n\tm = la.Double.Matrix.Build\r\n\tqMat = m.DiagonalOfDiagonalVector(qVec)\r\n\t\r\n\t#Subtract the cN and cF of the C-matrix\r\n\tcN = la.Double.DenseMatrix.SubMatrix(cMat, 0, cMat.RowCount, 0, cMat.ColumnCount - len(supPts))\r\n\t\r\n\tcF = la.Double.DenseMatrix.SubMatrix(cMat, 0, cMat.RowCount, cMat.ColumnCount - len(supPts), len(supPts))\r\n\t\r\n\t#Calculating dN and dF matrix\r\n\tcNt = cN.Transpose()\r\n\tdN = cNt*qMat*cN\r\n\tdF = cNt*qMat*cF\r\n\treturn dN, dF\r\ndef NewLines(cMat, newFreePts, supPts):\r\n\tnewPts = []\r\n\tnewLines = []\r\n\t\r\n\tfor i in range(len(newFreePts[0])):\r\n\t\tnewPts.append(Point.ByCoordinates(newFreePts[0][i],newFreePts[1][i], newFreePts[2][i]))\r\n\tnewPts += supPts\r\n\t\r\n\tfor row in range(cMat.RowCount):\r\n\t\tfor col in range(cMat.ColumnCount):\r\n\t\t\tif cMat[row, col] == 1:\r\n\t\t\t\tsPt = newPts[col]\r\n\t\t\tif cMat[row, col] == -1:\r\n\t\t\t\tePt = newPts[col]\r\n\t\tif not (sPt == ePt):\r\n\t\t\tnewLines.append(Line.ByStartPointEndPoint(sPt, ePt))\r\n\treturn newLines\t\t\t\r\n\t\t\r\n\t\r\nsortedPts = sorted_points(branches, supPts)\r\ncMat = branch_Node_matrix(branches, sortedPts)\r\nqVec = force_density_vector(branches)\r\n\r\ndN, dF = dMatrices(cMat, qVec, supPts)\r\ncoordVec = CoordinateVectors(sortedPts)\r\n\r\nxf = la.Double.DenseVector.SubVector(coordVec[0], len(coordVec[0])-len(supPts), len(supPts))\r\nyf = la.Double.DenseVector.SubVector(coordVec[1], len(coordVec[0])-len(supPts), len(supPts))\r\nzf = la.Double.DenseVector.SubVector(coordVec[2], len(coordVec[0])-len(supPts), len(supPts))\r\n\r\npx = la.Double.Vector.Build.Dense(len(sortedPts)-len(supPts), force_vec.X)\r\npy = la.Double.Vector.Build.Dense(len(sortedPts)-len(supPts), force_vec.Y)\r\npz = la.Double.Vector.Build.Dense(len(sortedPts)-len(supPts), force_vec.Z)\r\n\r\nxN = dN.Solve(px-dF*xf)\r\nyN = dN.Solve(py-dF*yf)\r\nzN = dN.Solve(pz-dF*zf)\r\n\r\nnewLines = NewLines(cMat, [xN, yN, zN], supPts)\r\n# Assign your output to the OUT variable.\r\nOUT = newLines",
+      "VariableInputPorts": true,
+      "Id": "49280e119ae84f0fbc0dab14f6a93c7e",
+      "Inputs": [
+        {
+          "Id": "e1a6872b11b84a489ff09ad1a790271c",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "754ce998f5b74e9eb8f5b62c2d894aa3",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "bf3a083ccbfc43fbb44c0ce6e4165b2f",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "bc07fb2f7d384cf2a0583562032234fa",
+          "Name": "IN[3]",
+          "Description": "Input #3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4ba03f057a974982ba08544902f03175",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\ninLines = IN[0]\r\nradius = IN[1]\r\nq = IN[2]\r\n\r\ncylinderList = []\r\nfor i, line in enumerate(inLines):\r\n\tsPt = line.StartPoint\r\n\tePt = line.EndPoint\r\n\tcylinder = Cylinder.ByPointsRadius(sPt, ePt, q[i]*radius)\r\n\tcylinderList.append(cylinder)\r\n\t#Calculate epsilon by delta L / L \r\n\t#Calculate Force by epsilon*A(defined by A_0*q[i])*E\r\n\t#Return a class Line with force?\r\n# Place your code below this line\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = cylinderList",
+      "VariableInputPorts": true,
+      "Id": "bd99f528ce7543908c40518890f00a8f",
+      "Inputs": [
+        {
+          "Id": "89b5f61373ac4f20acee4b007b023c2a",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "afbaa3af48e74df7b84082988f3cf66a",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0d50cc069f1841aba9d5ed10c0b057af",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f1b1709c6126407185a72d928df1653e",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0.1;",
+      "Id": "f6f298e8df2647e3bb0be4594bf107ad",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "496a0f1e650f42c18730812acb3fb9fe",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "pts = OUT[0];",
+      "Id": "718f04f3156f4c69a8b988a6cfd74ce3",
+      "Inputs": [
+        {
+          "Id": "e7fb94d5fbd04deeab6aac05f77a25c6",
+          "Name": "OUT",
+          "Description": "OUT",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9e0116cfe93e4f0fa0cfc52967ba2513",
+          "Name": "",
+          "Description": "pts",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "columns = OUT[1];",
+      "Id": "73a5eb63d4ab418380705c24e0e0428a",
+      "Inputs": [
+        {
+          "Id": "49d9575d4501457588a1f71fe5da70e3",
+          "Name": "OUT",
+          "Description": "OUT",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "15be3d7b88384ff6bbfc34d3287f2d53",
+          "Name": "",
+          "Description": "columns",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "scolumns = OUT[2];",
+      "Id": "7192135d9c764cb8877023061e237865",
+      "Inputs": [
+        {
+          "Id": "0db66ce2c6e74cfdb010af4107b54d1f",
+          "Name": "OUT",
+          "Description": "OUT",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8cb4c577d8b648e88a342b0b1dcbbdb2",
+          "Name": "",
+          "Description": "scolumns",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "//planes =a[0];\n//curves =a[1];\n//surfaces =a[2];\nsolidsFloors =a[3];\n\n//columnPoints = b[0];\n//columnLines = b[1];\n//columnSolids = b[2];",
+      "Id": "f365db11b586426f8ba11640f1803b32",
+      "Inputs": [
+        {
+          "Id": "e40b591d0a934990ad2adce143f68e01",
+          "Name": "a",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "af798b65a6fd4d2394e81ea532093b8a",
+          "Name": "",
+          "Description": "solidsFloors",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\ndef find_middle_curve(curve_t, curve_b):\r\n\tpt_b = curve_b.PointAtParameter(0)\r\n\tpt_t = curve_t.PointAtParameter(0)\r\n\tline = Line.ByStartPointEndPoint(pt_b, pt_t)\r\n\tpt_m = line.PointAtParameter(0.5)\r\n\tvec = Vector.ByTwoPoints(pt_b, pt_m)\r\n\tcurve_m = Curve.Translate(curve_b, vec)\r\n\treturn curve_m\r\n\r\ndef frange(n):\r\n\tstep = 1/float(n)\r\n\to_list = []\r\n\tfor i in range(int(n)):\r\n\t\to_list.append(i*step)\r\n\treturn o_list\r\n\r\ndef create_pipe(line, diam):\r\n\tst_pt = line.PointAtParameter(0)\r\n\tend_pt = line.PointAtParameter(1)\r\n\tn_vec = Vector.ByTwoPoints(st_pt, end_pt)\r\n\tplane = Plane.ByOriginNormal(st_pt, n_vec)\r\n\tcircle_1 = Circle.ByPlaneRadius(plane, diam/2)\r\n\tsolid = Curve.ExtrudeAsSolid(circle_1, n_vec)\r\n\treturn solid\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\n#Inputs\r\ninput_floors = IN[0]\r\n\r\nfloor_edge_surfaces = []\r\nfloor_curves = []\r\nfloor_anch_points = []\r\nfacade_c_points = []\r\nconn_pipes = []\r\nconn_bowls = []\r\n\r\nn_anch_points = IN[1]\r\noffset_connectors = IN[2]\r\ndia_pipes = IN[3]\r\nsphere_dia = IN[4]\r\n\r\nfacade_pipe_dia = 0.2\r\nbeam_pipe_dia = 0.2\r\n\r\nfor floor in input_floors:\r\n\tf_solids = Solid.Explode(floor)\r\n\tfloor_edge_surface = f_solids[0]\r\n\tfloor_edge_surfaces.append(floor_edge_surface)\r\n\tfloor_i_curves = Surface.PerimeterCurves(floor_edge_surface)\r\n\tfloor_curves.append(floor_i_curves[0])\r\n\tcurve_m = find_middle_curve(floor_i_curves[0],floor_i_curves[2])\r\n\tfloor_curves.append(curve_m)\r\n\tfloor_curves.append(floor_i_curves[2])\r\n\tparam_list = frange(n_anch_points)\r\n\t\r\n\tfloor_i_anch_points = []\r\n\tfacade_i_c_points = []\r\n\tconn_i_pipes = []\r\n\tconn_i_bowls = []\r\n\t\r\n\tfor p in param_list:\r\n\t\tanch_pt = curve_m.PointAtParameter(p)\r\n\t\tfloor_i_anch_points.append(anch_pt)\r\n\t\tvec_normal = Surface.NormalAtPoint(floor_edge_surface, anch_pt)\r\n\t\tconn_pt = Point.Translate(anch_pt, vec_normal, offset_connectors)\r\n\t\tfacade_i_c_points.append(conn_pt)\r\n\t\tconn_line = Line.ByStartPointEndPoint(anch_pt, conn_pt)\r\n\t\tconn_pipe = create_pipe(conn_line, dia_pipes)\r\n\t\tconn_i_pipes.append(conn_pipe)\r\n\t\tconn_bowl = Sphere.ByCenterPointRadius(conn_pt, sphere_dia/2)\r\n\t\tconn_i_bowls.append(conn_bowl)\r\n\t\t\r\n\tconn_bowls.append(conn_i_bowls)\r\n\tconn_pipes.append(conn_i_pipes)\r\n\tfloor_anch_points.append(floor_i_anch_points)\r\n\tfacade_c_points.append(facade_i_c_points)\r\n\r\nlist = []\r\nfacade_cols = []\r\nfacade_beams = []\r\n\r\nfor i in range(facade_c_points.Count-1):\r\n\tfor j in range(facade_c_points[i].Count):\r\n\t\tpt_bt_fl = facade_c_points[i][j]\r\n\t\tpt_tp_fl = facade_c_points[i+1][j]\r\n\t\tv_line = Line.ByStartPointEndPoint(pt_bt_fl, pt_tp_fl)\r\n\t\tfacade_col = create_pipe(v_line, facade_pipe_dia/2)\r\n\t\tfacade_cols.append(facade_col)\t\r\n\r\nfor i in range(facade_c_points.Count):\r\n\tfacade_c_points[i].append(facade_c_points[i][0])\r\n\tfor j in range(facade_c_points[i].Count-1):\r\n\t\tpt_bt_fl = facade_c_points[i][j]\r\n\t\tpt_tp_fl = facade_c_points[i][j+1]\r\n\t\th_line = Line.ByStartPointEndPoint(pt_bt_fl, pt_tp_fl)\r\n\t\tfacade_beam = create_pipe(h_line, beam_pipe_dia/2)\r\n\t\tfacade_beams.append(facade_beam)\r\n\t\r\n# Assign your output to the OUT variable.\r\n#OUT = [floor_anch_points, facade_c_points, conn_pipes, conn_bowls]\r\nOUT = [facade_cols, facade_beams, conn_bowls, conn_pipes]",
+      "VariableInputPorts": true,
+      "Id": "10803cfd18f84be6bc51f698ae0f2601",
+      "Inputs": [
+        {
+          "Id": "b33b3b6eb8f742cc8b22560d6fef1c34",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "47fb6270a3924fc58c3dc45de36330b6",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "bbff8d6a5a8547f58e6808f610130510",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1ab6690662b440509b667501d5050705",
+          "Name": "IN[3]",
+          "Description": "Input #3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3444be9397b2455abfe8a59c7662a138",
+          "Name": "IN[4]",
+          "Description": "Input #4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "23493f430cc64a8c8442d73121e2ce40",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "da00f9870ead4e5a8f5a6fc777e35f90",
+      "Inputs": [
+        {
+          "Id": "092b6cfd013140e8803a5671259b4d70",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "39fff967ce254a728a0da7ed134faf86",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\ndef createZcoordFloors(ptB, ptT, nFloors):\r\n\tdist = Point.DistanceTo(ptB,ptT)\r\n\tspan = dist/nFloors\r\n\ti =0\r\n\tzcord=ptB.Z\r\n\tzcords = []\r\n\twhile i< 1000:\r\n\t\tif zcord > ptT.Z:\r\n\t\t\tbreak\r\n\t\telse:\r\n\t\t\tzcords.append(zcord)\r\n\t\ti += 1\r\n\t\tzcord = zcord + span\r\n\treturn [zcords,span]\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\npts = IN[0]\r\nsrf = IN[1]\r\nnFl = IN[2]\r\n# Place your code below this line\r\nzcords = createZcoordFloors(pts[0],pts[1], nFl)\r\nfloorH = zcords[1]\r\n\r\nplns = []\r\ncrvs = []\r\nsrfs = []\r\nsols = []\r\nfor z in zcords[0]:\r\n\tvecZ = Vector.ByCoordinates(0,0,1)\r\n\tori = Point.ByCoordinates(0,0,z)\r\n\t\r\n\tpln = Plane.ByOriginNormal(ori, vecZ)\r\n\tplns.append(pln)\r\n\t\r\n\tcrv = Plane.Intersect(pln,srf)[0]\r\n\tcrvs.append(crv)\r\n\t\r\n\tnsrf = Surface.ByPatch(crv)\r\n\tsrfs.append(nsrf)\r\n\t\r\n\tsol = Curve.ExtrudeAsSolid(crv,0.2)\r\n\tsols.append(sol)\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = [plns,crvs,srfs, sols]",
+      "VariableInputPorts": true,
+      "Id": "51a7cc696c494863b89dfe3130a61640",
+      "Inputs": [
+        {
+          "Id": "9bd03340b17c4255b9ad9dbf67994a5b",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cc354472934c4b0898dcdc4526e06d68",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6f0046d9f2ca4b82bd53302563c8e998",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1904fe6392754962bddcc1ee5e5aad71",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n\r\ndef createDomain(min,max,step):\r\n\tdomain = [0]\r\n\ti=0\r\n\tnumber1 = 0\r\n\tnumber2 = 0\r\n\twhile i < 100:\r\n\t\ti +=1\r\n\t\tnumber1 = number1 + step\r\n\t\tnumber2 = number2 - step\r\n\t\tif number1 <= max:\r\n\t\t\tdomain.append(number1)\r\n\t\t\r\n\t\tif number2 >= min:\r\n\t\t\tdomain.append(number2)\r\n\t\t\r\n\tdomain.sort()\r\n\treturn domain\r\n\t\r\ndef comparePtsOnFloors(pt1,pt2):\r\n\tres = 0\r\n\tif pt1.X == pt2.X and pt1.Y == pt2.Y:\r\n\t\tres = 1\r\n\treturn res\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\npls = IN[0][0]\r\nedges = IN[0][1]\r\nfloors = IN[0][2]\r\nspanX = IN[1][0]\r\nspanY = IN[1][1]\r\n# Place your code below this line\r\n\r\npts = []\r\n\r\n\r\nfor i in range(pls.Count):\r\n\tpl = pls[i]\r\n\tfloor = floors[i]\r\n\tbob = BoundingBox.ByGeometry(floor)\r\n\tpb1 = bob.MinPoint\r\n\tpb2 = bob.MaxPoint\r\n\tdomainX = createDomain(pb1.X, pb2.X, spanX)\r\n\tdomainY = createDomain(pb1.Y, pb2.Y, spanY)\r\n\tipts = []\r\n\tfor ix in domainX:\r\n\t\tfor jy in domainY:\r\n\t\t\tpt = Point.ByCoordinates(ix,jy, pl.Origin.Z)\r\n\t\t\tdist = Surface.DistanceTo(floor,pt)\r\n\t\t\tif dist == 0:\r\n\t\t\t\tipts.append(pt)\r\n\tpts.append(ipts)\r\nscolumns =[]\t\r\ncolumns = []\r\nfor j in range(pls.Count -1):\r\n\tptsThisFloor = pts[j]\r\n\tptsNextFloor = pts[j+1]\r\n\ticolumns = []\r\n\tfor pt1 in ptsThisFloor:\r\n\t\tfor pt2 in ptsNextFloor:\r\n\t\t\tif comparePtsOnFloors(pt1,pt2) == 1:\r\n\t\t\t\tcol = Line.ByStartPointEndPoint(pt1,pt2)\r\n\t\t\t\tsec = Circle.ByCenterPointRadius(pt1,0.1)\r\n\t\t\t\tvec = Vector.ByTwoPoints(pt1,pt2)\r\n\t\t\t\tsol = Curve.ExtrudeAsSolid(sec,vec)\r\n\t\t\t\tscolumns.append(sol)\r\n\t\t\t\ticolumns.Add(col)\r\n\tcolumns.append(icolumns)\r\n# Assign your output to the OUT variable.\r\nOUT = [pts,columns,scolumns]",
+      "VariableInputPorts": true,
+      "Id": "469197c648284c6f8df15f29b70a0500",
+      "Inputs": [
+        {
+          "Id": "65e8b33ec6bc4137bd07d5857537e559",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "171cc16cea324274ba68ff1993e6699f",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "38b6e6d151ff4be8a0216a1a7f4d435b",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "xspan = 8;\nyspan = 8;\nspans = [xspan,yspan];",
+      "Id": "93fa0fada2c24eb1af8e555f7fecfaa7",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d288205c641943c5ade167e96b836046",
+          "Name": "",
+          "Description": "xspan",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6da8099de6ee47419ab38e3ea26d5017",
+          "Name": "",
+          "Description": "yspan",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "78a3a75f355a47c398045cdd9f21ec5d",
+          "Name": "",
+          "Description": "spans",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "pts;",
+      "Id": "f36ae7eb99ca45789c0af53ec75f32b7",
+      "Inputs": [
+        {
+          "Id": "12b66c3e224949aeb130a6938b09cec6",
+          "Name": "pts",
+          "Description": "pts",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ef91dec376cf44cc9510ba29ecf40909",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "5;\n0.7;\n0.1;\n0.4;",
+      "Id": "c6b4119a2c2b461481cfbe684b14a4f4",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "bc53c8523599426db6ffc2ed668a68d7",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cd2accd5522141bcbb3a2b9dcb7ebb02",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "986ab68046284a7a9a75524b7c4f37b3",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "38eb3cf20b8841caad47603c4d048515",
+          "Name": "",
+          "Description": "Value of expression at line 4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "pt1 = Point.ByCoordinates(0,30,0);\npt2 = Point.ByCoordinates(0,30,25);\npt3 = Point.ByCoordinates(0,30,50);\n\npts = [pt1,pt3];\n\ncir1 = Circle.ByCenterPointRadius(pt1,15);\ncir2 = Circle.ByCenterPointRadius(pt2,15);\ncir3 = Circle.ByCenterPointRadius(pt3,15);\n\npol1 = Polygon.RegularPolygon(cir1, 5);\npol2 = Polygon.RegularPolygon(cir2, 5);\npol3 = Polygon.RegularPolygon(cir3, 5);\n\n\ncirs = [cir1,cir2,cir3];\npolygons = [pol1, pol2, pol3];\n\nsrf = Surface.ByLoft(cirs);\n//srf = Surface.ByLoft(polygons);\n\nsrf2 = Surface.ByLoft(polygons);\nnumberOfFloors = 8;",
+      "Id": "d7a69f4283c046f3b059a932b0bd7504",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "8ac65c650b554a73a0636421220a280f",
+          "Name": "",
+          "Description": "pt1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5b49e728a3704211b563dba913f7e6c3",
+          "Name": "",
+          "Description": "pt2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a0a2bacf936f41d487968dd728b871ec",
+          "Name": "",
+          "Description": "pt3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b82779bf2805418dabbbcf65b2a215d8",
+          "Name": "",
+          "Description": "pts",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7c004ed17ec04403aabdda6c269bc91c",
+          "Name": "",
+          "Description": "cir1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "74d88d6d95574359b5d968fd1baca9e9",
+          "Name": "",
+          "Description": "cir2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "42b3258cd8824f90aa84fa154f6f3f5d",
+          "Name": "",
+          "Description": "cir3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ea2da5d342c34936a7e2cea53876965a",
+          "Name": "",
+          "Description": "pol1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1402199efa0645a1b537d5029cd2f276",
+          "Name": "",
+          "Description": "pol2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "24d28872e0d245efbdaeef128b6c1861",
+          "Name": "",
+          "Description": "pol3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "02aaf1e0363c4bffb4c66e6db507b979",
+          "Name": "",
+          "Description": "cirs",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "dcce89259f1f42098c739669f67e6400",
+          "Name": "",
+          "Description": "polygons",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f490fae8da124dd1b0c525c3099267c7",
+          "Name": "",
+          "Description": "srf",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5316e2f8fac547f7af3625cedf1e298f",
+          "Name": "",
+          "Description": "srf2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8512c8f3b4574f679faf8a6d82290389",
+          "Name": "",
+          "Description": "numberOfFloors",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "//planes =a[0];\n//curves =a[1];\n//surfaces =a[2];\nsolidsFloors =a[3];\n\n//columnPoints = b[0];\n//columnLines = b[1];\n//columnSolids = b[2];",
+      "Id": "fb70ee64c7bd44f58f5297765f9f5a16",
+      "Inputs": [
+        {
+          "Id": "0fde044798cd45ea818e0dd87231cc64",
+          "Name": "a",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c19129d3c2284c24bd822e82a65efbeb",
+          "Name": "",
+          "Description": "solidsFloors",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\ndef find_middle_curve(curve_t, curve_b):\r\n\tpt_b = curve_b.PointAtParameter(0)\r\n\tpt_t = curve_t.PointAtParameter(0)\r\n\tline = Line.ByStartPointEndPoint(pt_b, pt_t)\r\n\tpt_m = line.PointAtParameter(0.5)\r\n\tvec = Vector.ByTwoPoints(pt_b, pt_m)\r\n\tcurve_m = Curve.Translate(curve_b, vec)\r\n\treturn curve_m\r\n\r\ndef frange(n):\r\n\tstep = 1/float(n)\r\n\to_list = []\r\n\tfor i in range(int(n)):\r\n\t\to_list.append(i*step)\r\n\treturn o_list\r\n\r\ndef create_pipe(line, diam):\r\n\tst_pt = line.PointAtParameter(0)\r\n\tend_pt = line.PointAtParameter(1)\r\n\tn_vec = Vector.ByTwoPoints(st_pt, end_pt)\r\n\tplane = Plane.ByOriginNormal(st_pt, n_vec)\r\n\tcircle_1 = Circle.ByPlaneRadius(plane, diam/2)\r\n\tsolid = Curve.ExtrudeAsSolid(circle_1, n_vec)\r\n\treturn solid\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\n#Inputs\r\ninput_floors = IN[0]\r\n\r\nfloor_edge_surfaces = []\r\nfloor_curves = []\r\nfloor_anch_points = []\r\nfacade_c_points = []\r\nconn_pipes = []\r\nconn_bowls = []\r\n\r\nn_anch_points = IN[1]\r\noffset_connectors = IN[2]\r\ndia_pipes = IN[3]\r\nsphere_dia = IN[4]\r\n\r\nfacade_pipe_dia = 0.2\r\nbeam_pipe_dia = 0.2\r\n\r\nfor floor in input_floors:\r\n\tf_solids = Solid.Explode(floor)\r\n\tfloor_edge_surface = f_solids[0]\r\n\tfloor_edge_surfaces.append(floor_edge_surface)\r\n\tfloor_i_curves = Surface.PerimeterCurves(floor_edge_surface)\r\n\tfloor_curves.append(floor_i_curves[0])\r\n\tcurve_m = find_middle_curve(floor_i_curves[0],floor_i_curves[2])\r\n\tfloor_curves.append(curve_m)\r\n\tfloor_curves.append(floor_i_curves[2])\r\n\tparam_list = frange(n_anch_points)\r\n\t\r\n\tfloor_i_anch_points = []\r\n\tfacade_i_c_points = []\r\n\tconn_i_pipes = []\r\n\tconn_i_bowls = []\r\n\t\r\n\tfor p in param_list:\r\n\t\tanch_pt = curve_m.PointAtParameter(p)\r\n\t\tfloor_i_anch_points.append(anch_pt)\r\n\t\tvec_normal = Surface.NormalAtPoint(floor_edge_surface, anch_pt)\r\n\t\tconn_pt = Point.Translate(anch_pt, vec_normal, offset_connectors)\r\n\t\tfacade_i_c_points.append(conn_pt)\r\n\t\tconn_line = Line.ByStartPointEndPoint(anch_pt, conn_pt)\r\n\t\tconn_pipe = create_pipe(conn_line, dia_pipes)\r\n\t\tconn_i_pipes.append(conn_pipe)\r\n\t\tconn_bowl = Sphere.ByCenterPointRadius(conn_pt, sphere_dia/2)\r\n\t\tconn_i_bowls.append(conn_bowl)\r\n\t\t\r\n\tconn_bowls.append(conn_i_bowls)\r\n\tconn_pipes.append(conn_i_pipes)\r\n\tfloor_anch_points.append(floor_i_anch_points)\r\n\tfacade_c_points.append(facade_i_c_points)\r\n\r\nlist = []\r\nfacade_cols = []\r\nfacade_beams = []\r\n\r\nfor i in range(facade_c_points.Count-1):\r\n\tfor j in range(facade_c_points[i].Count):\r\n\t\tpt_bt_fl = facade_c_points[i][j]\r\n\t\tpt_tp_fl = facade_c_points[i+1][j]\r\n\t\tv_line = Line.ByStartPointEndPoint(pt_bt_fl, pt_tp_fl)\r\n\t\tfacade_col = create_pipe(v_line, facade_pipe_dia/2)\r\n\t\tfacade_cols.append(facade_col)\t\r\n\r\nfor i in range(facade_c_points.Count):\r\n\tfacade_c_points[i].append(facade_c_points[i][0])\r\n\tfor j in range(facade_c_points[i].Count-1):\r\n\t\tpt_bt_fl = facade_c_points[i][j]\r\n\t\tpt_tp_fl = facade_c_points[i][j+1]\r\n\t\th_line = Line.ByStartPointEndPoint(pt_bt_fl, pt_tp_fl)\r\n\t\tfacade_beam = create_pipe(h_line, beam_pipe_dia/2)\r\n\t\tfacade_beams.append(facade_beam)\r\n\t\r\n# Assign your output to the OUT variable.\r\n#OUT = [floor_anch_points, facade_c_points, conn_pipes, conn_bowls]\r\nOUT = [facade_cols, facade_beams, conn_bowls, conn_pipes]",
+      "VariableInputPorts": true,
+      "Id": "2d35286156504f9e89d72e2843041454",
+      "Inputs": [
+        {
+          "Id": "ee1fef6c59f14f4f9e29216691ad9be9",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a0ba9f69f2e14f22ac81be07e2b43251",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e96ba23bce12478e83ba7b41c1ef934a",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2ffec4319aec41338fdbafbdcef2ed20",
+          "Name": "IN[3]",
+          "Description": "Input #3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8bbe8a9d864d41c0a3e5557b3297aa74",
+          "Name": "IN[4]",
+          "Description": "Input #4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "726140bc14b34afd98136448c3f70d74",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "3a3cc1dc08824966b7d3ef3a8990de7f",
+      "Inputs": [
+        {
+          "Id": "7b5c1b20f8c04629bada0939ed9e4ce1",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "78eb27787acd4cd5902ba2cca812d625",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\ndef createZcoordFloors(ptB, ptT, nFloors):\r\n\tdist = Point.DistanceTo(ptB,ptT)\r\n\tspan = dist/nFloors\r\n\ti =0\r\n\tzcord=ptB.Z\r\n\tzcords = []\r\n\twhile i< 1000:\r\n\t\tif zcord > ptT.Z:\r\n\t\t\tbreak\r\n\t\telse:\r\n\t\t\tzcords.append(zcord)\r\n\t\ti += 1\r\n\t\tzcord = zcord + span\r\n\treturn [zcords,span]\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\npts = IN[0]\r\nsrf = IN[1]\r\nnFl = IN[2]\r\n# Place your code below this line\r\nzcords = createZcoordFloors(pts[0],pts[1], nFl)\r\nfloorH = zcords[1]\r\n\r\nplns = []\r\ncrvs = []\r\nsrfs = []\r\nsols = []\r\nfor z in zcords[0]:\r\n\tvecZ = Vector.ByCoordinates(0,0,1)\r\n\tori = Point.ByCoordinates(0,0,z)\r\n\t\r\n\tpln = Plane.ByOriginNormal(ori, vecZ)\r\n\tplns.append(pln)\r\n\t\r\n\tcrv = Plane.Intersect(pln,srf)[0]\r\n\tcrvs.append(crv)\r\n\t\r\n\tnsrf = Surface.ByPatch(crv)\r\n\tsrfs.append(nsrf)\r\n\t\r\n\tsol = Curve.ExtrudeAsSolid(crv,0.2)\r\n\tsols.append(sol)\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = [plns,crvs,srfs, sols]",
+      "VariableInputPorts": true,
+      "Id": "f7b671db2ac6453f8eed22f40e7c9a4e",
+      "Inputs": [
+        {
+          "Id": "d7b1440229d042c9a2a632e08cd53224",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1e7fd46113484106a2fdc92f6f501505",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3b4d5b51f18f4bd7b77c560f965abc0b",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6ad1895873f44908bda0f4d4d617305c",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n\r\ndef createDomain(min,max,step):\r\n\tdomain = [0]\r\n\ti=0\r\n\tnumber1 = 0\r\n\tnumber2 = 0\r\n\twhile i < 100:\r\n\t\ti +=1\r\n\t\tnumber1 = number1 + step\r\n\t\tnumber2 = number2 - step\r\n\t\tif number1 <= max:\r\n\t\t\tdomain.append(number1)\r\n\t\t\r\n\t\tif number2 >= min:\r\n\t\t\tdomain.append(number2)\r\n\t\t\r\n\tdomain.sort()\r\n\treturn domain\r\n\t\r\ndef comparePtsOnFloors(pt1,pt2):\r\n\tres = 0\r\n\tif pt1.X == pt2.X and pt1.Y == pt2.Y:\r\n\t\tres = 1\r\n\treturn res\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\npls = IN[0][0]\r\nedges = IN[0][1]\r\nfloors = IN[0][2]\r\nspanX = IN[1][0]\r\nspanY = IN[1][1]\r\n# Place your code below this line\r\n\r\npts = []\r\n\r\n\r\nfor i in range(pls.Count):\r\n\tpl = pls[i]\r\n\tfloor = floors[i]\r\n\tbob = BoundingBox.ByGeometry(floor)\r\n\tpb1 = bob.MinPoint\r\n\tpb2 = bob.MaxPoint\r\n\tdomainX = createDomain(pb1.X, pb2.X, spanX)\r\n\tdomainY = createDomain(pb1.Y, pb2.Y, spanY)\r\n\tipts = []\r\n\tfor ix in domainX:\r\n\t\tfor jy in domainY:\r\n\t\t\tpt = Point.ByCoordinates(ix,jy, pl.Origin.Z)\r\n\t\t\tdist = Surface.DistanceTo(floor,pt)\r\n\t\t\tif dist == 0:\r\n\t\t\t\tipts.append(pt)\r\n\tpts.append(ipts)\r\nscolumns =[]\t\r\ncolumns = []\r\nfor j in range(pls.Count -1):\r\n\tptsThisFloor = pts[j]\r\n\tptsNextFloor = pts[j+1]\r\n\ticolumns = []\r\n\tfor pt1 in ptsThisFloor:\r\n\t\tfor pt2 in ptsNextFloor:\r\n\t\t\tif comparePtsOnFloors(pt1,pt2) == 1:\r\n\t\t\t\tcol = Line.ByStartPointEndPoint(pt1,pt2)\r\n\t\t\t\tsec = Circle.ByCenterPointRadius(pt1,0.1)\r\n\t\t\t\tvec = Vector.ByTwoPoints(pt1,pt2)\r\n\t\t\t\tsol = Curve.ExtrudeAsSolid(sec,vec)\r\n\t\t\t\tscolumns.append(sol)\r\n\t\t\t\ticolumns.Add(col)\r\n\tcolumns.append(icolumns)\r\n# Assign your output to the OUT variable.\r\nOUT = [pts,columns,scolumns]",
+      "VariableInputPorts": true,
+      "Id": "d2783398cc414b6ea2747bdd28b8e3dd",
+      "Inputs": [
+        {
+          "Id": "0362c65112904610a409a47b56ece192",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "598993ccb1fc4e63a07b1a89287a7014",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ed3d4a711c7e4c76ad2e140b3827aca2",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "xspan = 8;\nyspan = 8;\nspans = [xspan,yspan];",
+      "Id": "3b1b737a950c4756921e428d3a77116f",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "dccd47db0b604ea6ba19ef250a22b5e8",
+          "Name": "",
+          "Description": "xspan",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d0bd398901064566b9836440313896fb",
+          "Name": "",
+          "Description": "yspan",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0a5ac0e2c66f4f168d6daaf821860859",
+          "Name": "",
+          "Description": "spans",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "pts;",
+      "Id": "673badb67b904f64b29451eccfed2c35",
+      "Inputs": [
+        {
+          "Id": "ced0e155ed4b450ebcced7cdeab61a14",
+          "Name": "pts",
+          "Description": "pts",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5f1f75300399465582523723d364f58a",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "5;\n0.7;\n0.1;\n0.4;",
+      "Id": "4e9a26e8efcd4d1c8f6d649cae567c6f",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "67b1864adc844b6fa1031881a0320edf",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2fc752505e8b451da233206b42edb6d4",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fb32c42aa02443bd96eb8fb3cbc9a217",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6f59ab86985b464ebc0e4c7681301dd7",
+          "Name": "",
+          "Description": "Value of expression at line 4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "pt1 = Point.ByCoordinates(-30,0,0);\npt2 = Point.ByCoordinates(-30,0,20);\npt3 = Point.ByCoordinates(-30,0,40);\n\npts = [pt1,pt3];\n\ncir1 = Circle.ByCenterPointRadius(pt1,15);\ncir2 = Circle.ByCenterPointRadius(pt2,15);\ncir3 = Circle.ByCenterPointRadius(pt3,15);\n\npol1 = Polygon.RegularPolygon(cir1, 5);\npol2 = Polygon.RegularPolygon(cir2, 5);\npol3 = Polygon.RegularPolygon(cir3, 5);\n\n\ncirs = [cir1,cir2,cir3];\npolygons = [pol1, pol2, pol3];\n\nsrf = Surface.ByLoft(cirs);\n//srf = Surface.ByLoft(polygons);\n\nsrf2 = Surface.ByLoft(polygons);\nnumberOfFloors = 8;",
+      "Id": "a4c0c16b35e44dd3a33cce84fb044872",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "9ee599fbf4bf4552b01ac81941b2d391",
+          "Name": "",
+          "Description": "pt1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "11c38139e30c474fbf904dced170d865",
+          "Name": "",
+          "Description": "pt2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "59ce798bab74461496e57ee52456823b",
+          "Name": "",
+          "Description": "pt3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c6d7ba9e978b4979aa5b6aa4bf3bc56c",
+          "Name": "",
+          "Description": "pts",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "aa93772bc2e54c54804daee6fb664cd8",
+          "Name": "",
+          "Description": "cir1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "76d860e8a1b849198bd5a79f667f65a5",
+          "Name": "",
+          "Description": "cir2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8641c0b80ec740abb9b1e2a22eb64f2b",
+          "Name": "",
+          "Description": "cir3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1c13c7b5d6194c4bb6c7a0740d60d9e9",
+          "Name": "",
+          "Description": "pol1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b883528cae3c467e8d88cc8513a180d9",
+          "Name": "",
+          "Description": "pol2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "dcf6f8cc6a3d49bfad223776bc6addce",
+          "Name": "",
+          "Description": "pol3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "970ca305d43c4c0ba13b52ff4a9e93ad",
+          "Name": "",
+          "Description": "cirs",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "78a82f88ebe64d3db5f1cb7635e5e5b9",
+          "Name": "",
+          "Description": "polygons",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "bf7ff2f45715471ea77dfada47f3587e",
+          "Name": "",
+          "Description": "srf",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "dd8c73412d86495f86f2dade387e11b8",
+          "Name": "",
+          "Description": "srf2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0b7cd2e38a914efbb0d659ebe346f2a2",
+          "Name": "",
+          "Description": "numberOfFloors",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "//planes =a[0];\n//curves =a[1];\n//surfaces =a[2];\nsolidsFloors =a[3];\n\n//columnPoints = b[0];\n//columnLines = b[1];\n//columnSolids = b[2];",
+      "Id": "8b0ac81f30db4c8086a29de5d157d802",
+      "Inputs": [
+        {
+          "Id": "3b27eee20eca46639444ad7ba1b1399f",
+          "Name": "a",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "26a7e4eea59c4ac1b1ca5d5db7a58a05",
+          "Name": "",
+          "Description": "solidsFloors",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\ndef find_middle_curve(curve_t, curve_b):\r\n\tpt_b = curve_b.PointAtParameter(0)\r\n\tpt_t = curve_t.PointAtParameter(0)\r\n\tline = Line.ByStartPointEndPoint(pt_b, pt_t)\r\n\tpt_m = line.PointAtParameter(0.5)\r\n\tvec = Vector.ByTwoPoints(pt_b, pt_m)\r\n\tcurve_m = Curve.Translate(curve_b, vec)\r\n\treturn curve_m\r\n\r\ndef frange(n):\r\n\tstep = 1/float(n)\r\n\to_list = []\r\n\tfor i in range(int(n)):\r\n\t\to_list.append(i*step)\r\n\treturn o_list\r\n\r\ndef create_pipe(line, diam):\r\n\tst_pt = line.PointAtParameter(0)\r\n\tend_pt = line.PointAtParameter(1)\r\n\tn_vec = Vector.ByTwoPoints(st_pt, end_pt)\r\n\tplane = Plane.ByOriginNormal(st_pt, n_vec)\r\n\tcircle_1 = Circle.ByPlaneRadius(plane, diam/2)\r\n\tsolid = Curve.ExtrudeAsSolid(circle_1, n_vec)\r\n\treturn solid\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\n#Inputs\r\ninput_floors = IN[0]\r\n\r\nfloor_edge_surfaces = []\r\nfloor_curves = []\r\nfloor_anch_points = []\r\nfacade_c_points = []\r\nconn_pipes = []\r\nconn_bowls = []\r\n\r\nn_anch_points = IN[1]\r\noffset_connectors = IN[2]\r\ndia_pipes = IN[3]\r\nsphere_dia = IN[4]\r\n\r\nfacade_pipe_dia = 0.2\r\nbeam_pipe_dia = 0.2\r\n\r\nfor floor in input_floors:\r\n\tf_solids = Solid.Explode(floor)\r\n\tfloor_edge_surface = f_solids[0]\r\n\tfloor_edge_surfaces.append(floor_edge_surface)\r\n\tfloor_i_curves = Surface.PerimeterCurves(floor_edge_surface)\r\n\tfloor_curves.append(floor_i_curves[0])\r\n\tcurve_m = find_middle_curve(floor_i_curves[0],floor_i_curves[2])\r\n\tfloor_curves.append(curve_m)\r\n\tfloor_curves.append(floor_i_curves[2])\r\n\tparam_list = frange(n_anch_points)\r\n\t\r\n\tfloor_i_anch_points = []\r\n\tfacade_i_c_points = []\r\n\tconn_i_pipes = []\r\n\tconn_i_bowls = []\r\n\t\r\n\tfor p in param_list:\r\n\t\tanch_pt = curve_m.PointAtParameter(p)\r\n\t\tfloor_i_anch_points.append(anch_pt)\r\n\t\tvec_normal = Surface.NormalAtPoint(floor_edge_surface, anch_pt)\r\n\t\tconn_pt = Point.Translate(anch_pt, vec_normal, offset_connectors)\r\n\t\tfacade_i_c_points.append(conn_pt)\r\n\t\tconn_line = Line.ByStartPointEndPoint(anch_pt, conn_pt)\r\n\t\tconn_pipe = create_pipe(conn_line, dia_pipes)\r\n\t\tconn_i_pipes.append(conn_pipe)\r\n\t\tconn_bowl = Sphere.ByCenterPointRadius(conn_pt, sphere_dia/2)\r\n\t\tconn_i_bowls.append(conn_bowl)\r\n\t\t\r\n\tconn_bowls.append(conn_i_bowls)\r\n\tconn_pipes.append(conn_i_pipes)\r\n\tfloor_anch_points.append(floor_i_anch_points)\r\n\tfacade_c_points.append(facade_i_c_points)\r\n\r\nlist = []\r\nfacade_cols = []\r\nfacade_beams = []\r\n\r\nfor i in range(facade_c_points.Count-1):\r\n\tfor j in range(facade_c_points[i].Count):\r\n\t\tpt_bt_fl = facade_c_points[i][j]\r\n\t\tpt_tp_fl = facade_c_points[i+1][j]\r\n\t\tv_line = Line.ByStartPointEndPoint(pt_bt_fl, pt_tp_fl)\r\n\t\tfacade_col = create_pipe(v_line, facade_pipe_dia/2)\r\n\t\tfacade_cols.append(facade_col)\t\r\n\r\nfor i in range(facade_c_points.Count):\r\n\tfacade_c_points[i].append(facade_c_points[i][0])\r\n\tfor j in range(facade_c_points[i].Count-1):\r\n\t\tpt_bt_fl = facade_c_points[i][j]\r\n\t\tpt_tp_fl = facade_c_points[i][j+1]\r\n\t\th_line = Line.ByStartPointEndPoint(pt_bt_fl, pt_tp_fl)\r\n\t\tfacade_beam = create_pipe(h_line, beam_pipe_dia/2)\r\n\t\tfacade_beams.append(facade_beam)\r\n\t\r\n# Assign your output to the OUT variable.\r\n#OUT = [floor_anch_points, facade_c_points, conn_pipes, conn_bowls]\r\nOUT = [facade_cols, facade_beams, conn_bowls, conn_pipes]",
+      "VariableInputPorts": true,
+      "Id": "c5967a836e474f369ece13444e60dcd2",
+      "Inputs": [
+        {
+          "Id": "4ec5fae624b64e538c60ffe3dc962424",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8af996a8b3e943919a53b857ff81d863",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f1b186c7f40f4451bfe631c36abc736e",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0ab48277570b45d9ba704a27b716efc6",
+          "Name": "IN[3]",
+          "Description": "Input #3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4ceb16efcd9e44c2879ed217845e4850",
+          "Name": "IN[4]",
+          "Description": "Input #4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0ddbeb52a67a4b81b40e1603b9a19a1f",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "ba9ce76e025a4744b3b103fa041f21b6",
+      "Inputs": [
+        {
+          "Id": "c970387ffe4d42279fd50efd29482237",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e1f5859503fa4a4ba77814273ae9472e",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\ndef createZcoordFloors(ptB, ptT, nFloors):\r\n\tdist = Point.DistanceTo(ptB,ptT)\r\n\tspan = dist/nFloors\r\n\ti =0\r\n\tzcord=ptB.Z\r\n\tzcords = []\r\n\twhile i< 1000:\r\n\t\tif zcord > ptT.Z:\r\n\t\t\tbreak\r\n\t\telse:\r\n\t\t\tzcords.append(zcord)\r\n\t\ti += 1\r\n\t\tzcord = zcord + span\r\n\treturn [zcords,span]\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\npts = IN[0]\r\nsrf = IN[1]\r\nnFl = IN[2]\r\n# Place your code below this line\r\nzcords = createZcoordFloors(pts[0],pts[1], nFl)\r\nfloorH = zcords[1]\r\n\r\nplns = []\r\ncrvs = []\r\nsrfs = []\r\nsols = []\r\nfor z in zcords[0]:\r\n\tvecZ = Vector.ByCoordinates(0,0,1)\r\n\tori = Point.ByCoordinates(0,0,z)\r\n\t\r\n\tpln = Plane.ByOriginNormal(ori, vecZ)\r\n\tplns.append(pln)\r\n\t\r\n\tcrv = Plane.Intersect(pln,srf)[0]\r\n\tcrvs.append(crv)\r\n\t\r\n\tnsrf = Surface.ByPatch(crv)\r\n\tsrfs.append(nsrf)\r\n\t\r\n\tsol = Curve.ExtrudeAsSolid(crv,0.2)\r\n\tsols.append(sol)\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = [plns,crvs,srfs, sols]",
+      "VariableInputPorts": true,
+      "Id": "cd26f566b7e044ef9edd2ca2b9719f2d",
+      "Inputs": [
+        {
+          "Id": "791fd72b0b5d43b1a70d9ec9e6cabc8e",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c44149905c8e445781c9790b2dd3a12f",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "61690fee379a4f6f84c3e6a972979e78",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e928aac8e7ec4f8684e316148daab927",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n\r\ndef createDomain(min,max,step):\r\n\tdomain = [0]\r\n\ti=0\r\n\tnumber1 = 0\r\n\tnumber2 = 0\r\n\twhile i < 100:\r\n\t\ti +=1\r\n\t\tnumber1 = number1 + step\r\n\t\tnumber2 = number2 - step\r\n\t\tif number1 <= max:\r\n\t\t\tdomain.append(number1)\r\n\t\t\r\n\t\tif number2 >= min:\r\n\t\t\tdomain.append(number2)\r\n\t\t\r\n\tdomain.sort()\r\n\treturn domain\r\n\t\r\ndef comparePtsOnFloors(pt1,pt2):\r\n\tres = 0\r\n\tif pt1.X == pt2.X and pt1.Y == pt2.Y:\r\n\t\tres = 1\r\n\treturn res\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\npls = IN[0][0]\r\nedges = IN[0][1]\r\nfloors = IN[0][2]\r\nspanX = IN[1][0]\r\nspanY = IN[1][1]\r\n# Place your code below this line\r\n\r\npts = []\r\n\r\n\r\nfor i in range(pls.Count):\r\n\tpl = pls[i]\r\n\tfloor = floors[i]\r\n\tbob = BoundingBox.ByGeometry(floor)\r\n\tpb1 = bob.MinPoint\r\n\tpb2 = bob.MaxPoint\r\n\tdomainX = createDomain(pb1.X, pb2.X, spanX)\r\n\tdomainY = createDomain(pb1.Y, pb2.Y, spanY)\r\n\tipts = []\r\n\tfor ix in domainX:\r\n\t\tfor jy in domainY:\r\n\t\t\tpt = Point.ByCoordinates(ix,jy, pl.Origin.Z)\r\n\t\t\tdist = Surface.DistanceTo(floor,pt)\r\n\t\t\tif dist == 0:\r\n\t\t\t\tipts.append(pt)\r\n\tpts.append(ipts)\r\nscolumns =[]\t\r\ncolumns = []\r\nfor j in range(pls.Count -1):\r\n\tptsThisFloor = pts[j]\r\n\tptsNextFloor = pts[j+1]\r\n\ticolumns = []\r\n\tfor pt1 in ptsThisFloor:\r\n\t\tfor pt2 in ptsNextFloor:\r\n\t\t\tif comparePtsOnFloors(pt1,pt2) == 1:\r\n\t\t\t\tcol = Line.ByStartPointEndPoint(pt1,pt2)\r\n\t\t\t\tsec = Circle.ByCenterPointRadius(pt1,0.1)\r\n\t\t\t\tvec = Vector.ByTwoPoints(pt1,pt2)\r\n\t\t\t\tsol = Curve.ExtrudeAsSolid(sec,vec)\r\n\t\t\t\tscolumns.append(sol)\r\n\t\t\t\ticolumns.Add(col)\r\n\tcolumns.append(icolumns)\r\n# Assign your output to the OUT variable.\r\nOUT = [pts,columns,scolumns]",
+      "VariableInputPorts": true,
+      "Id": "196d73e899ce4cccb841c7e74c282ed5",
+      "Inputs": [
+        {
+          "Id": "0350466ec9c24d2db64eb4d09fa5b4eb",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9aaeeb736bc342c381375b30a4d3b074",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "650ba9f38e0d45fb8ea73bf2a17ad49c",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "xspan = 8;\nyspan = 8;\nspans = [xspan,yspan];",
+      "Id": "b6341ec6dc8844ccb443c5410b12fd3e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "368a274eed1e427c808160cf83c5bace",
+          "Name": "",
+          "Description": "xspan",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1f655f5e63d24b1298c033ec1228ef22",
+          "Name": "",
+          "Description": "yspan",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "68f07d3b1a9a479e93a86964ea379385",
+          "Name": "",
+          "Description": "spans",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "pts;",
+      "Id": "cbfd4220c1b74ce49646a7881398eadb",
+      "Inputs": [
+        {
+          "Id": "6dde7389499b4ecea75cdb810114bfbd",
+          "Name": "pts",
+          "Description": "pts",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6598bf334d574070bac8f8a245d76e96",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "5;\n0.7;\n0.1;\n0.4;",
+      "Id": "e977047adff341408816321e2a9fae81",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "1ace2c9a47d94158aeb8ad09f084cf57",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e54197225b284aa5b80b15c2961d747c",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "214829be9ea743b0b8fcbfab1e429798",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d874e6ef4a994b219be96f064d7cf262",
+          "Name": "",
+          "Description": "Value of expression at line 4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "pt1 = Point.ByCoordinates(0,-30,0);\npt2 = Point.ByCoordinates(0,-30,20);\npt3 = Point.ByCoordinates(0,-30,40);\n\npts = [pt1,pt3];\n\ncir1 = Circle.ByCenterPointRadius(pt1,15);\ncir2 = Circle.ByCenterPointRadius(pt2,15);\ncir3 = Circle.ByCenterPointRadius(pt3,15);\n\npol1 = Polygon.RegularPolygon(cir1, 5);\npol2 = Polygon.RegularPolygon(cir2, 5);\npol3 = Polygon.RegularPolygon(cir3, 5);\n\n\ncirs = [cir1,cir2,cir3];\npolygons = [pol1, pol2, pol3];\n\nsrf = Surface.ByLoft(cirs);\n//srf = Surface.ByLoft(polygons);\n\nsrf2 = Surface.ByLoft(polygons);\nnumberOfFloors = 8;",
+      "Id": "66f526009e694f07b1c8fd87ba79a021",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "be2c23b78bac43cfafd155aed08b4806",
+          "Name": "",
+          "Description": "pt1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5eefadfa784143b0b301785e5323c130",
+          "Name": "",
+          "Description": "pt2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e62188346b36436c93697eb2145c56d3",
+          "Name": "",
+          "Description": "pt3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ab99f04d73b9405f82b4dfbb4275bb50",
+          "Name": "",
+          "Description": "pts",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2ce479252fa44a86b777a4596389da26",
+          "Name": "",
+          "Description": "cir1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1acecfbef77d4d099b36ba998ecdaa9d",
+          "Name": "",
+          "Description": "cir2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c649e830afa14e87a035eff817158cff",
+          "Name": "",
+          "Description": "cir3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "26e7221e2a364b328d19dd695a38ef7c",
+          "Name": "",
+          "Description": "pol1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6891eb4d0785438bad60c2e611f433d4",
+          "Name": "",
+          "Description": "pol2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b136d5595ffc4e55abd378245a516d5a",
+          "Name": "",
+          "Description": "pol3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "483fe7c2245e4dfe847115ca5b8e7325",
+          "Name": "",
+          "Description": "cirs",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f5841458abb14a57b9f371bdb0bca63f",
+          "Name": "",
+          "Description": "polygons",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ea9fd55e60764557bdd3d60de05e9c3c",
+          "Name": "",
+          "Description": "srf",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b3fc1814dd5541c2b80b381f4f1bec73",
+          "Name": "",
+          "Description": "srf2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a749180387e64f2ba3e8c02e66271d3a",
+          "Name": "",
+          "Description": "numberOfFloors",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "67f56819d2d0400fb6af7942bd79118c",
+      "End": "c9107ab2628c4ec480069b8199ff6098",
+      "Id": "03e05157fabe4d0a947f21fdf0bb7211"
+    },
+    {
+      "Start": "0846a9963ac44bc994c3c0a111073d12",
+      "End": "50ed0a83e9e445948b3f6af68684e87d",
+      "Id": "2010e15aedb14d96916082f087d4a5ef"
+    },
+    {
+      "Start": "5faa55f5fdb44e7facf1f860eb7ea37e",
+      "End": "22b56b4109d3415cb470e333036c30cc",
+      "Id": "b1ea0f605bac4198830e0d49dda49127"
+    },
+    {
+      "Start": "95c68550f6e146eda127e4ff39376be6",
+      "End": "5742a267740841bb875c0331c4b79dd8",
+      "Id": "0e95a5e43e9d4a3ab718603170c727c3"
+    },
+    {
+      "Start": "a7564e1d9e7846c8b29c8e84a026fd9e",
+      "End": "52cc6310f5f9466ba89ec685656e9d60",
+      "Id": "8315bdb2c2854ef4bfacc0230a0a34ad"
+    },
+    {
+      "Start": "a7564e1d9e7846c8b29c8e84a026fd9e",
+      "End": "f1fba4b3b9f9478d933ab8c0c51f8942",
+      "Id": "eaee6556f3d64a9aa618640ccc205b17"
+    },
+    {
+      "Start": "3bf18b9646244055a0bf32e6a5feae70",
+      "End": "0d3b5cb245c943408256eef6d38b1051",
+      "Id": "7a7612dd07f44282ba7726196dd0b71b"
+    },
+    {
+      "Start": "4c4fcc15dddb421ab3a3bb1198bd3fe1",
+      "End": "876628e230054c45ad148b6a28bd5efa",
+      "Id": "0487880b2a4842b3a69169ef17039540"
+    },
+    {
+      "Start": "5ff84e93aaca46109045c03d0385213b",
+      "End": "7cfd5c476d3948c9a61c3b1fc62b5154",
+      "Id": "6b51a6588bae4c40b9dae2d70d3853b5"
+    },
+    {
+      "Start": "7bf1f755293f4ed9a18f7a3c528e6e4e",
+      "End": "0232e64b710b4b9f9471a9aa865d86bf",
+      "Id": "a31a4f5570ef4208900902f1d8ec7936"
+    },
+    {
+      "Start": "428e39d1778b49ddbe091e31618bf3a0",
+      "End": "da03d86f2fc14bc8979cf90c85f24263",
+      "Id": "d8e90b2e774d416989d6e71f29e4c4a0"
+    },
+    {
+      "Start": "55a4a010e7ee4ba9abfafe163d986801",
+      "End": "5e25bae28f7240e1a283dc12eb27656b",
+      "Id": "2b4a8cd5966f48ee9694a3cde60b14a4"
+    },
+    {
+      "Start": "5b26efa517f041b1895091cf33809753",
+      "End": "45694d98a78d429aac9dc5b993e71910",
+      "Id": "2f21d1af02374021a7931a4cd7fcedff"
+    },
+    {
+      "Start": "634ba6658b30460db48d909f59ac30f1",
+      "End": "eaf51ec46f5a4abb876a3d4f08b55b5c",
+      "Id": "c40ab0b0a70a46068978092c75e34746"
+    },
+    {
+      "Start": "95caaf0d96bd4df3b75ee1d13ab1a223",
+      "End": "c4975797605f40daa98df6e78aec21d0",
+      "Id": "e8ef8574d35549949c98804972522bee"
+    },
+    {
+      "Start": "66c35333c68b4a5b9cff36081fa34a98",
+      "End": "e5f60f82917a4ca99f1410d6e995f691",
+      "Id": "69b6801e05a34a61a6be12a8fee0a530"
+    },
+    {
+      "Start": "3c2589329abd43fdad0e2f3b1c4a9040",
+      "End": "c38f61e177eb4c7193bf2a14fb7d81e9",
+      "Id": "1498d127836f48448c5e31cd7f82c4ec"
+    },
+    {
+      "Start": "0932c1c2749a45aeab9dad697227cb20",
+      "End": "ffa97f7921a2486d834efe06f6524883",
+      "Id": "68f72b0548d749d5b163ebabe3c0aca7"
+    },
+    {
+      "Start": "37c53d74245844578373434742561ae3",
+      "End": "88ed767a8e8944eeaa30a811e79b21bd",
+      "Id": "922efe44e4e947fb8ef4b6df8731cc27"
+    },
+    {
+      "Start": "2ef1a2c04d5f4e0c94d9390940d8f245",
+      "End": "73fe4657ee8744ad98ad17b0ad3b54bc",
+      "Id": "c3a52c59578b480fa090d93b83ee515e"
+    },
+    {
+      "Start": "8514d11d846e4209a5094265448c6c54",
+      "End": "3fd27ada66484c1b8c5726be2c548755",
+      "Id": "f6280d2eea1443a3948c473d41bc0322"
+    },
+    {
+      "Start": "8514d11d846e4209a5094265448c6c54",
+      "End": "5cc28ac49d794001a6b283917a917d33",
+      "Id": "8a54ad1032034a4691c601c40efd1cc3"
+    },
+    {
+      "Start": "8514d11d846e4209a5094265448c6c54",
+      "End": "f267b7e6f8fe46459c7ac58079cb6c5a",
+      "Id": "9fd9ab35becd4ea28067164984c08c09"
+    },
+    {
+      "Start": "c36b73c6eaec490aa3e3c7fe20905424",
+      "End": "5655f5dcffbf40cc87f620c97e4554cc",
+      "Id": "8fce08a8f3d142389b2d38de0017d711"
+    },
+    {
+      "Start": "c36b73c6eaec490aa3e3c7fe20905424",
+      "End": "3b4c0dca839949d39ae3a7c344d4cf41",
+      "Id": "c1d5341c4059419f9774d1ed2b7e8a0f"
+    },
+    {
+      "Start": "c36b73c6eaec490aa3e3c7fe20905424",
+      "End": "691374e4d6b7473eb9ad94b8df06c425",
+      "Id": "6086aebc2e9642cea029e79e4c0fd9cd"
+    },
+    {
+      "Start": "736e40ac284d4534859c3bd6dd30bf20",
+      "End": "95980af83353473bb993e6b2c85d7bd3",
+      "Id": "730ab0098d1547f7b05f01feecbd9ea8"
+    },
+    {
+      "Start": "267dcfd6a9d2482f8c0b693aabecc15d",
+      "End": "e7fb94d5fbd04deeab6aac05f77a25c6",
+      "Id": "819747fccf8a407dabc6e935c6203000"
+    },
+    {
+      "Start": "267dcfd6a9d2482f8c0b693aabecc15d",
+      "End": "49d9575d4501457588a1f71fe5da70e3",
+      "Id": "bb9bd6a7c547416c888fd9d56bd16d56"
+    },
+    {
+      "Start": "267dcfd6a9d2482f8c0b693aabecc15d",
+      "End": "0db66ce2c6e74cfdb010af4107b54d1f",
+      "Id": "e5fbac2a0ddf48b3937db61243f754f2"
+    },
+    {
+      "Start": "6c13f789dd0b479da10d6093db7af5fb",
+      "End": "0307f7afb3ca4286b3ab28e955b61ab1",
+      "Id": "3cc5c82b627f4a62b58bebfb41b07be7"
+    },
+    {
+      "Start": "bf566144d6ab4ddea76418d5e1f36ab4",
+      "End": "41816e6770a742b5a45ca5ee61f18470",
+      "Id": "56929308e37a4dd7b6b431fc23c69828"
+    },
+    {
+      "Start": "bf566144d6ab4ddea76418d5e1f36ab4",
+      "End": "b67ad54aaaf045cf88f7ca9d1f15dade",
+      "Id": "df63522433ac4ca5a73808e9ee435761"
+    },
+    {
+      "Start": "1a93134ed8984d0abdb111688e086fff",
+      "End": "9ba967e7218b49c38967b86516ec991b",
+      "Id": "e472f7b1737741ae969fafdea801025c"
+    },
+    {
+      "Start": "0f935393c971411d8c117a1f0ad6e614",
+      "End": "b82c349fcf854a2b974deb21476e02b5",
+      "Id": "0dc5b9af223c4231aa73315a614bd795"
+    },
+    {
+      "Start": "9adb35ee6cd948ddb0100bb7ef9be1b8",
+      "End": "06ef253e4e074227b142ee95724f8da5",
+      "Id": "cd85d9d881404b69b52aedea318710d5"
+    },
+    {
+      "Start": "7906965c41bc43eab8ff383906c38e61",
+      "End": "8debfafef04c4790bde3b3144edbbdb0",
+      "Id": "49d71287a07641d9921f50ded1dd3996"
+    },
+    {
+      "Start": "03ef8900ad2749048d66e970add8b600",
+      "End": "a0b13d7e7cb747af81a0e68f6343eaf2",
+      "Id": "1bc50c74e9d24a26ac6a525785406d1c"
+    },
+    {
+      "Start": "9bb8cea550744d8eace21da9b1477d53",
+      "End": "7b6478fce0474fa9b1095e466cbbc401",
+      "Id": "377e357f88ae4acc9993408768a1ab31"
+    },
+    {
+      "Start": "561bb3a16d8c460abd553ba6fd0470f2",
+      "End": "403cc39c685140198935ec4a29395624",
+      "Id": "c31aa15b42474e55aaa2df31471c50f5"
+    },
+    {
+      "Start": "7a1ce50d6cd14db4a4cd292b37026beb",
+      "End": "64033f06dbb04239b2a933bdf6eae890",
+      "Id": "cf41e4a6515a454d80e8b7871d9ad77b"
+    },
+    {
+      "Start": "1ff9caa63a4246d9b333ad301a728b6c",
+      "End": "aa1642133ebe4c9dba344de501fd8e5d",
+      "Id": "0130a2de04ec434d991c06bc8ed09309"
+    },
+    {
+      "Start": "2f83448d9f994de7bdb0d3afb2a67aa3",
+      "End": "e1b3786bdd3e4a878c12edc6dfece41d",
+      "Id": "34b160802dd746ce9a8c0e4330c0491d"
+    },
+    {
+      "Start": "2f83448d9f994de7bdb0d3afb2a67aa3",
+      "End": "51c8a946930d47d980c8b0553401f46d",
+      "Id": "1c596f16e4354ec69b3ee4d15bad399c"
+    },
+    {
+      "Start": "2f83448d9f994de7bdb0d3afb2a67aa3",
+      "End": "3b39eca42a34442e89a3cb572ef48ecb",
+      "Id": "0e20aed8ae9a461a9aa5cb894dd9fa08"
+    },
+    {
+      "Start": "2017a235165c4539b710c604dcd09b43",
+      "End": "9360aca905964ed5853f1df7f89876d0",
+      "Id": "bdacc7868ef84815b909a9c4268a9a88"
+    },
+    {
+      "Start": "6e2b077499b743719baf8776f5537a69",
+      "End": "af3852b2d2064c5d8500e58641e889df",
+      "Id": "d4f234f8e1b84c30b4e848fa67387562"
+    },
+    {
+      "Start": "4f6621666ff04030a9a0c808c4143c29",
+      "End": "fc06d01297864f089db4489e91686247",
+      "Id": "5eae28c435a0456ab1597da79199d8de"
+    },
+    {
+      "Start": "6d00022813014f55a26d63683845e28b",
+      "End": "96e78c45f67c4bc9afe539d95fb91ca9",
+      "Id": "ee25eb6723a64f55a39bbab496e63456"
+    },
+    {
+      "Start": "6d00022813014f55a26d63683845e28b",
+      "End": "85f30824bb164d82ab0e043681d4790f",
+      "Id": "b94d14e87e3143f3a836845b16247a1b"
+    },
+    {
+      "Start": "2bc62bb204f04aceba5a67c7b8ecf379",
+      "End": "529f6a5b5b8e46f9ab87840be4b9b253",
+      "Id": "d5cc1a3e4a584c208694dd142fa57bcc"
+    },
+    {
+      "Start": "fff4f87e82914885b5ad7c486fdc973a",
+      "End": "e5a66b09aab94118a3ad9e2f8d40a877",
+      "Id": "2cfd60c286674d57ac27a39782e81afb"
+    },
+    {
+      "Start": "cec40cbc56164c88adb426550c3f59f9",
+      "End": "754ce998f5b74e9eb8f5b62c2d894aa3",
+      "Id": "c003f1c27c2b47be828ce2a4433cabdd"
+    },
+    {
+      "Start": "026eecdcc55c48b4b317f68a6833b0ad",
+      "End": "3bd963392b0b4da3ba18b7410edff6b3",
+      "Id": "1f900a5e855e4c97be2df89bda116905"
+    },
+    {
+      "Start": "8a287db4bd3b4a6c9ca0634a58744efc",
+      "End": "cc96c32b17334e26a51ed7fad96f0a19",
+      "Id": "e8b0b12efa8a4af3992eba19aa67ba96"
+    },
+    {
+      "Start": "48a9a49ee8c64cdf8b745ef567b76648",
+      "End": "c39619b3b4b5467e801f982749a3b0c6",
+      "Id": "418d7e07f23e4e44adc975f22c962da6"
+    },
+    {
+      "Start": "48a9a49ee8c64cdf8b745ef567b76648",
+      "End": "03010d5ae94a423cb4141985dbcca0c2",
+      "Id": "979c773fb612455890ea6ab10fb0a8ee"
+    },
+    {
+      "Start": "abbab87c5a2b44b388f0f82b96c90125",
+      "End": "57fc6602987748b4a85fe35781fabe64",
+      "Id": "72d8dbbd4e314a1eb3905ac3863d021c"
+    },
+    {
+      "Start": "abbab87c5a2b44b388f0f82b96c90125",
+      "End": "0d50cc069f1841aba9d5ed10c0b057af",
+      "Id": "35d106ce18354806aa10d10192ef7a75"
+    },
+    {
+      "Start": "37c1a7781bb14a9ca4ef5e6fb0771683",
+      "End": "e1a6872b11b84a489ff09ad1a790271c",
+      "Id": "5201441805d84a22b8c38b0f089d4846"
+    },
+    {
+      "Start": "f3b2f1bff9a14660913bdf3f940fd58f",
+      "End": "bf3a083ccbfc43fbb44c0ce6e4165b2f",
+      "Id": "558742bf3540445aa0207f788b3b6c08"
+    },
+    {
+      "Start": "98d69d7858274c6ba8a49c3463dfd709",
+      "End": "bc07fb2f7d384cf2a0583562032234fa",
+      "Id": "2b8236b0c36f41628e26a0d6f31d02bb"
+    },
+    {
+      "Start": "4ba03f057a974982ba08544902f03175",
+      "End": "89b5f61373ac4f20acee4b007b023c2a",
+      "Id": "ef000ac6ad614bac8a4c6e980cdb4b82"
+    },
+    {
+      "Start": "496a0f1e650f42c18730812acb3fb9fe",
+      "End": "afbaa3af48e74df7b84082988f3cf66a",
+      "Id": "fbf92b9a94084e19bbf767a0a6fbc7d8"
+    },
+    {
+      "Start": "af798b65a6fd4d2394e81ea532093b8a",
+      "End": "b33b3b6eb8f742cc8b22560d6fef1c34",
+      "Id": "26aece94234b482baa848063459aa19d"
+    },
+    {
+      "Start": "23493f430cc64a8c8442d73121e2ce40",
+      "End": "092b6cfd013140e8803a5671259b4d70",
+      "Id": "b4bb8184984b4113a284b53e386dddcf"
+    },
+    {
+      "Start": "1904fe6392754962bddcc1ee5e5aad71",
+      "End": "e40b591d0a934990ad2adce143f68e01",
+      "Id": "5fdfc78ea11f450da13c2d655079f549"
+    },
+    {
+      "Start": "1904fe6392754962bddcc1ee5e5aad71",
+      "End": "65e8b33ec6bc4137bd07d5857537e559",
+      "Id": "4adf93161ed044329e9d0b21e906a386"
+    },
+    {
+      "Start": "78a3a75f355a47c398045cdd9f21ec5d",
+      "End": "171cc16cea324274ba68ff1993e6699f",
+      "Id": "2e7e9370a5bc47a3ac4d9247659a7972"
+    },
+    {
+      "Start": "bc53c8523599426db6ffc2ed668a68d7",
+      "End": "47fb6270a3924fc58c3dc45de36330b6",
+      "Id": "7c8c141e3ca14448b00d430a957be931"
+    },
+    {
+      "Start": "cd2accd5522141bcbb3a2b9dcb7ebb02",
+      "End": "bbff8d6a5a8547f58e6808f610130510",
+      "Id": "e15f07fe153b46c38b8f25be0a32f7fc"
+    },
+    {
+      "Start": "986ab68046284a7a9a75524b7c4f37b3",
+      "End": "1ab6690662b440509b667501d5050705",
+      "Id": "28a5c69f3e3b4b629e07f96fa84755e0"
+    },
+    {
+      "Start": "38eb3cf20b8841caad47603c4d048515",
+      "End": "3444be9397b2455abfe8a59c7662a138",
+      "Id": "b1f5004091ff48f2959de28c317ac295"
+    },
+    {
+      "Start": "b82779bf2805418dabbbcf65b2a215d8",
+      "End": "9bd03340b17c4255b9ad9dbf67994a5b",
+      "Id": "373d961c583c41298d09bc454e287a29"
+    },
+    {
+      "Start": "f490fae8da124dd1b0c525c3099267c7",
+      "End": "cc354472934c4b0898dcdc4526e06d68",
+      "Id": "22a95c5238914b98af6bfb8b1bb29367"
+    },
+    {
+      "Start": "5316e2f8fac547f7af3625cedf1e298f",
+      "End": "12b66c3e224949aeb130a6938b09cec6",
+      "Id": "1d902d5e0d354c8186cf2741b76032c5"
+    },
+    {
+      "Start": "8512c8f3b4574f679faf8a6d82290389",
+      "End": "6f0046d9f2ca4b82bd53302563c8e998",
+      "Id": "0f7879bd4e5b41729d22b98288a8816d"
+    },
+    {
+      "Start": "c19129d3c2284c24bd822e82a65efbeb",
+      "End": "ee1fef6c59f14f4f9e29216691ad9be9",
+      "Id": "d6d629c68c7f43748295f926bc3a5ae0"
+    },
+    {
+      "Start": "726140bc14b34afd98136448c3f70d74",
+      "End": "7b5c1b20f8c04629bada0939ed9e4ce1",
+      "Id": "0b993391da584d7c86de06a0f770f831"
+    },
+    {
+      "Start": "6ad1895873f44908bda0f4d4d617305c",
+      "End": "0fde044798cd45ea818e0dd87231cc64",
+      "Id": "230a51070bf04c57ae9d585e52aad269"
+    },
+    {
+      "Start": "6ad1895873f44908bda0f4d4d617305c",
+      "End": "0362c65112904610a409a47b56ece192",
+      "Id": "ce439cb1df0c4134918e22516232debd"
+    },
+    {
+      "Start": "0a5ac0e2c66f4f168d6daaf821860859",
+      "End": "598993ccb1fc4e63a07b1a89287a7014",
+      "Id": "c6788af422f14176ac0f38f570d4012b"
+    },
+    {
+      "Start": "67b1864adc844b6fa1031881a0320edf",
+      "End": "a0ba9f69f2e14f22ac81be07e2b43251",
+      "Id": "422dac83912644c98cadc5223f416dc9"
+    },
+    {
+      "Start": "2fc752505e8b451da233206b42edb6d4",
+      "End": "e96ba23bce12478e83ba7b41c1ef934a",
+      "Id": "45a2e6fb6b97427ea23d3091cdab364c"
+    },
+    {
+      "Start": "fb32c42aa02443bd96eb8fb3cbc9a217",
+      "End": "2ffec4319aec41338fdbafbdcef2ed20",
+      "Id": "6a2f67f1244f4f65b64bc967bc03655e"
+    },
+    {
+      "Start": "6f59ab86985b464ebc0e4c7681301dd7",
+      "End": "8bbe8a9d864d41c0a3e5557b3297aa74",
+      "Id": "5395c1da19dd44f39bd97be39ebd2b06"
+    },
+    {
+      "Start": "c6d7ba9e978b4979aa5b6aa4bf3bc56c",
+      "End": "d7b1440229d042c9a2a632e08cd53224",
+      "Id": "86772d6398c14f3198d26bfe41ee1c36"
+    },
+    {
+      "Start": "bf7ff2f45715471ea77dfada47f3587e",
+      "End": "1e7fd46113484106a2fdc92f6f501505",
+      "Id": "04e102f27e564f0e956962dcc9672fc3"
+    },
+    {
+      "Start": "dd8c73412d86495f86f2dade387e11b8",
+      "End": "ced0e155ed4b450ebcced7cdeab61a14",
+      "Id": "be15fbce0ada4eccbf9016808ac05dbe"
+    },
+    {
+      "Start": "0b7cd2e38a914efbb0d659ebe346f2a2",
+      "End": "3b4d5b51f18f4bd7b77c560f965abc0b",
+      "Id": "15ec5c0d2c0f4f729d67f8506d9de3e2"
+    },
+    {
+      "Start": "26a7e4eea59c4ac1b1ca5d5db7a58a05",
+      "End": "4ec5fae624b64e538c60ffe3dc962424",
+      "Id": "2657059ea11e45b1abe0cc6329fbc7d7"
+    },
+    {
+      "Start": "0ddbeb52a67a4b81b40e1603b9a19a1f",
+      "End": "c970387ffe4d42279fd50efd29482237",
+      "Id": "5d7a8399e7cf4493a6b668c4234606e1"
+    },
+    {
+      "Start": "e928aac8e7ec4f8684e316148daab927",
+      "End": "3b27eee20eca46639444ad7ba1b1399f",
+      "Id": "2fa2885672a94ec59147f02cd82a0837"
+    },
+    {
+      "Start": "e928aac8e7ec4f8684e316148daab927",
+      "End": "0350466ec9c24d2db64eb4d09fa5b4eb",
+      "Id": "090a1bedb6df4153a5119f5c0096e770"
+    },
+    {
+      "Start": "68f07d3b1a9a479e93a86964ea379385",
+      "End": "9aaeeb736bc342c381375b30a4d3b074",
+      "Id": "ebd80d32fd254975b6932781a038e75f"
+    },
+    {
+      "Start": "1ace2c9a47d94158aeb8ad09f084cf57",
+      "End": "8af996a8b3e943919a53b857ff81d863",
+      "Id": "085e932e08084d2ab4c016d5a9c8ff71"
+    },
+    {
+      "Start": "e54197225b284aa5b80b15c2961d747c",
+      "End": "f1b186c7f40f4451bfe631c36abc736e",
+      "Id": "eaa744a714c44d8cbb2147c499344aba"
+    },
+    {
+      "Start": "214829be9ea743b0b8fcbfab1e429798",
+      "End": "0ab48277570b45d9ba704a27b716efc6",
+      "Id": "d2b07d627a304763bc7820cc7419335b"
+    },
+    {
+      "Start": "d874e6ef4a994b219be96f064d7cf262",
+      "End": "4ceb16efcd9e44c2879ed217845e4850",
+      "Id": "53066e3d2ed440569eef0c0e64bbf1ab"
+    },
+    {
+      "Start": "ab99f04d73b9405f82b4dfbb4275bb50",
+      "End": "791fd72b0b5d43b1a70d9ec9e6cabc8e",
+      "Id": "69d449383c994057800352e125706f2d"
+    },
+    {
+      "Start": "ea9fd55e60764557bdd3d60de05e9c3c",
+      "End": "c44149905c8e445781c9790b2dd3a12f",
+      "Id": "6a0fc6885b48446f825f17d6fc679521"
+    },
+    {
+      "Start": "b3fc1814dd5541c2b80b381f4f1bec73",
+      "End": "6dde7389499b4ecea75cdb810114bfbd",
+      "Id": "83e27bc5600a4f82b6879737b1330511"
+    },
+    {
+      "Start": "a749180387e64f2ba3e8c02e66271d3a",
+      "End": "61690fee379a4f6f84c3e6a972979e78",
+      "Id": "51596806b9814a4f90722fc77a56c749"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.6.1.8786",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -65.070742440411834,
+      "EyeY": 49.595044281235353,
+      "EyeZ": 78.450387025669585,
+      "LookX": 53.670823390749831,
+      "LookY": -34.144052257980157,
+      "LookZ": -75.831852278813187,
+      "UpX": 0.078403725719687956,
+      "UpY": 0.99074784047156339,
+      "UpZ": -0.11077712938364481
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": false,
+        "Name": "Input facade",
+        "Id": "fa7fd26d37ec4ba8845f436aa2468bd3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -321.53696548196234,
+        "Y": -139.37975349084456
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Create Floors [Python]",
+        "Id": "1c01416c57494050b7049bb88943a60c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 197.325896118363,
+        "Y": 5.5817476704359592
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "78a51e9e009d4936ab9f89a3011ad239",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 752.41737496322514,
+        "Y": -13.238976043154594
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Create Columns [Python]",
+        "Id": "3168ec47662e40bdb5380d6ee04b9d1d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 869.70165857125994,
+        "Y": 228.50112645965726
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "9b01d39bfdcd450ca2bf39bf77d37e6f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 247.38720099359057,
+        "Y": 345.81297657887956
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Create Exterior Lines",
+        "Id": "342f8d9885b94a71b9e62ae536995764",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1027.4624765476117,
+        "Y": 18.454776107887369
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "ed16dcc83f4c493cb5ab79282176b842",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1191.3729676761543,
+        "Y": 166.68585969933577
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "2b2e10be8c394061a1d2cd0d1a30b023",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 733.96823392675446,
+        "Y": 451.13881516299421
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "b7aaf9c1b5ab462496ce4d91cedae025",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 201.75435372585184,
+        "Y": 220.34309621478837
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "4b55d4fdc7134da5b363889f9f2f63e2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -308.92285683140119,
+        "Y": -983.24017562885251
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Create Floors [Python]",
+        "Id": "9fdffddd165041fb82caded87acc57ea",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 387.7703763046286,
+        "Y": -858.26217926445918
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "9924c0d02ffe4c39941954b7e5545f85",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 651.30961888977561,
+        "Y": -851.7860541235051
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "3251d9de78a847cb84ba0fd77132bc29",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1004.4464101621276,
+        "Y": -729.59991884346914
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Convert from Circle to Polygon",
+        "Id": "a5b1852746f3405a8e0063ff4720f446",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1227.2175280453555,
+        "Y": -792.32237219236742
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "b9169afe940344be86fffc5d3619b1f4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 996.74319213600165,
+        "Y": -1024.3596567604732
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Create Columns [Python]",
+        "Id": "5d060a57a5db433794281fe31e744f65",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3540.9252644102767,
+        "Y": -345.83529913949712
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Create Exterior Lines",
+        "Id": "cf303ae5c173454f881f97a7eeb2e107",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3984.287031281071,
+        "Y": -685.94115168697863
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "46a0e24ea5ee4a57959360f48f7a39bb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3573.6196012752239,
+        "Y": -582.41378353470748
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "2fcb805e48d4466faa76379be81cb37d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1563.2170099488465,
+        "Y": -924.446326982156
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "9d731941282a4ef6804bd1145868cee3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2948.0785171188263,
+        "Y": -553.0935131055744
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "N sides polygon",
+        "Id": "cfe99e0214f14f1f970d5791f7c26736",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2093.3062927772253,
+        "Y": -518.83172720136827
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "dia pipes",
+        "Id": "1f989ff78221411392cf3801567343aa",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2072.3981628445886,
+        "Y": -244.84620140447009
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "dia sphere",
+        "Id": "425ab639924148dcaadadf69483eb3cc",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2068.5164943347982,
+        "Y": -181.28621318476519
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "b595aab8407e4e3b8163d978b7d7745f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2952.8030804439418,
+        "Y": -411.94323583680705
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Yspan",
+        "Id": "aea44188c5a84d199055b3ce46ff586a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2070.6078335902575,
+        "Y": -357.97826086678197
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Xspan",
+        "Id": "1a6c96aa062247caae94adfc2b95c0f2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2081.1199133910095,
+        "Y": -421.42538971139356
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "df427355424741f1b4c0980e10ac1a1b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1569.4908257794741,
+        "Y": -1487.2609261088821
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Circle.ByBestFitThroughPoints",
+        "Id": "5341d193ee1841baa8f078520462c397",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1936.1800525883218,
+        "Y": -1474.9998075363169
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Circle.CenterPoint",
+        "Id": "449771fa98f84b839e20fbcd430d44f2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2213.0914846846754,
+        "Y": -1560.0315543208133
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "acb5942b38dc4d26b6de5b055cf0e7b2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2186.1256411207778,
+        "Y": -1436.2892088719723
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "66f7f36f89e641909c21ec682dd75a37",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1878.7982612427406,
+        "Y": -1959.045944905645
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Python Script",
+        "Id": "42be97be1aa54943b3e4d6742e85e14f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2524.9405099399037,
+        "Y": -1622.7200752522515
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "b5cab5b3f6cb4946aab2a0d5ca2a3939",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2206.1090132175395,
+        "Y": -1320.4984230905764
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "f596d2d27c8f43d8a71c679b8a62d8d9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1907.1820032945279,
+        "Y": -1854.4317198584311
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "SupPts",
+        "Id": "f7ec7f79714c424d917262918357f7f5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3235.5833276686353,
+        "Y": -1231.306570168857
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "df345c8e1a1a4fef9d63cea5be8b65e6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3006.2430709763312,
+        "Y": -1769.0411841843475
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.Count",
+        "Id": "e9eb0a364548417e87846e054e815f12",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3497.908318474133,
+        "Y": -1771.543850946083
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "List.Flatten",
+        "Id": "c5e6f771c16441088cfe99fdb84afbef",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3287.9424664408475,
+        "Y": -1833.7478470476199
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "461f5ee7081c4f34aec2a8f1141c1551",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3343.4304135186603,
+        "Y": -1647.9929033095862
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Branch_force_pair",
+        "Id": "58aa0bb1357048cabf03a69c31b8e5f7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3281.8676462301564,
+        "Y": -1342.0783919187918
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "7012df4fd2d04be595a5e9d95be7a240",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3088.6909935704334,
+        "Y": -1125.7897717584879
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "File Path",
+        "Id": "db0391d465c2457b9b4d8830ac56a35a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3187.9132575275025,
+        "Y": -1023.7392384257855
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "49280e119ae84f0fbc0dab14f6a93c7e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3622.7194581416406,
+        "Y": -1255.0087330714259
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "bd99f528ce7543908c40518890f00a8f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 4015.7542321998048,
+        "Y": -1252.2468191022426
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "f6f298e8df2647e3bb0be4594bf107ad",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3850.7558416665975,
+        "Y": -1051.6081640536677
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "718f04f3156f4c69a8b988a6cfd74ce3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3936.6804512816661,
+        "Y": -450.811210042649
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "73a5eb63d4ab418380705c24e0e0428a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3930.3395871415769,
+        "Y": -342.92226515705863
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "7192135d9c764cb8877023061e237865",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3933.7650729978423,
+        "Y": -236.91512699145221
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "f365db11b586426f8ba11640f1803b32",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 784.76689380004564,
+        "Y": 734.83313194409277
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Create Exterior Lines",
+        "Id": "10803cfd18f84be6bc51f698ae0f2601",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1059.8119953844307,
+        "Y": 766.52688409513473
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "da00f9870ead4e5a8f5a6fc777e35f90",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1223.7224865129706,
+        "Y": 914.75796768658336
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Create Floors [Python]",
+        "Id": "51a7cc696c494863b89dfe3130a61640",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 229.67541495518367,
+        "Y": 753.65385565768338
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Create Columns [Python]",
+        "Id": "469197c648284c6f8df15f29b70a0500",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 902.05117740808055,
+        "Y": 976.57323444690428
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "93fa0fada2c24eb1af8e555f7fecfaa7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 279.73671983041163,
+        "Y": 1093.8850845661273
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "f36ae7eb99ca45789c0af53ec75f32b7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 234.10387256267268,
+        "Y": 968.41520420203528
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "c6b4119a2c2b461481cfbe684b14a4f4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 766.31775276357484,
+        "Y": 1199.2109231502413
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Input facade",
+        "Id": "d7a69f4283c046f3b059a932b0bd7504",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -289.18744664514134,
+        "Y": 608.69235449640234
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "fb70ee64c7bd44f58f5297765f9f5a16",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 827.40038233882342,
+        "Y": 1437.3734642252682
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Create Exterior Lines",
+        "Id": "2d35286156504f9e89d72e2843041454",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1102.4454839232085,
+        "Y": 1469.0672163763104
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "3a3cc1dc08824966b7d3ef3a8990de7f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1266.3559750517484,
+        "Y": 1617.2982999677588
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Create Floors [Python]",
+        "Id": "f7b671db2ac6453f8eed22f40e7c9a4e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 272.30890349396145,
+        "Y": 1456.1941879388589
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Create Columns [Python]",
+        "Id": "d2783398cc414b6ea2747bdd28b8e3dd",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 944.68466594685856,
+        "Y": 1679.1135667280798
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "3b1b737a950c4756921e428d3a77116f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 322.37020836918941,
+        "Y": 1796.425416847303
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "673badb67b904f64b29451eccfed2c35",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 276.73736110145046,
+        "Y": 1670.9555364832108
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "4e9a26e8efcd4d1c8f6d649cae567c6f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 808.9512413023524,
+        "Y": 1901.7512554314169
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Input facade",
+        "Id": "a4c0c16b35e44dd3a33cce84fb044872",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -246.55395810636355,
+        "Y": 1311.232686777578
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "8b0ac81f30db4c8086a29de5d157d802",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 783.72343616639773,
+        "Y": 2238.7687267090214
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Create Exterior Lines",
+        "Id": "c5967a836e474f369ece13444e60dcd2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1058.7685377507828,
+        "Y": 2270.4624788600636
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "ba9ce76e025a4744b3b103fa041f21b6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1222.6790288793227,
+        "Y": 2418.6935624515122
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Create Floors [Python]",
+        "Id": "cd26f566b7e044ef9edd2ca2b9719f2d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 228.63195732153577,
+        "Y": 2257.5894504226121
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Create Columns [Python]",
+        "Id": "196d73e899ce4cccb841c7e74c282ed5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 901.00771977443287,
+        "Y": 2480.508829211833
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "b6341ec6dc8844ccb443c5410b12fd3e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 278.69326219676373,
+        "Y": 2597.820679331056
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "cbfd4220c1b74ce49646a7881398eadb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 233.06041492902477,
+        "Y": 2472.3507989669642
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "e977047adff341408816321e2a9fae81",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 765.27429512992671,
+        "Y": 2703.14651791517
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Input facade",
+        "Id": "66f526009e694f07b1c8fd87ba79a021",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -290.23090427878924,
+        "Y": 2112.6279492613312
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "93ca2f03033c4ff9901d31e99c608c2a",
+        "Title": "Parameters\r\n",
+        "Nodes": [
+          "cfe99e0214f14f1f970d5791f7c26736",
+          "1f989ff78221411392cf3801567343aa",
+          "425ab639924148dcaadadf69483eb3cc",
+          "aea44188c5a84d199055b3ce46ff586a",
+          "1a6c96aa062247caae94adfc2b95c0f2"
+        ],
+        "Left": 2058.5164943347982,
+        "Top": -614.83172720136827,
+        "Width": 343.78979844242713,
+        "Height": 501.54551401660308,
+        "FontSize": 36.0,
+        "InitialTop": -518.83172720136827,
+        "InitialHeight": 482.54551401660308,
+        "TextblockHeight": 86.0,
+        "Background": "#FFBB87C6"
+      },
+      {
+        "Id": "5c585b10da484c0399d6e159470e0976",
+        "Title": "Create Floors, Points, Polygons and Surfaces",
+        "Nodes": [
+          "9fdffddd165041fb82caded87acc57ea",
+          "9924c0d02ffe4c39941954b7e5545f85",
+          "3251d9de78a847cb84ba0fd77132bc29",
+          "a5b1852746f3405a8e0063ff4720f446",
+          "b9169afe940344be86fffc5d3619b1f4",
+          "2fcb805e48d4466faa76379be81cb37d"
+        ],
+        "Left": 377.7703763046286,
+        "Top": -1077.3596567604732,
+        "Width": 1417.4466336442179,
+        "Height": 468.57360263696808,
+        "FontSize": 36.0,
+        "InitialTop": -1024.3596567604732,
+        "InitialHeight": 454.36831017884697,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "a2399ba27fe14f3ab3e2778e8e4dc1a3",
+        "Title": "Create lines for roof",
+        "Nodes": [
+          "df427355424741f1b4c0980e10ac1a1b",
+          "5341d193ee1841baa8f078520462c397",
+          "449771fa98f84b839e20fbcd430d44f2",
+          "acb5942b38dc4d26b6de5b055cf0e7b2",
+          "42be97be1aa54943b3e4d6742e85e14f",
+          "b5cab5b3f6cb4946aab2a0d5ca2a3939"
+        ],
+        "Left": 1559.4908257794741,
+        "Top": -1675.7200752522515,
+        "Width": 1099.4496841604296,
+        "Height": 448.22165216167514,
+        "FontSize": 36.0,
+        "InitialTop": -1622.7200752522515,
+        "InitialHeight": 447.22165216167514,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "9f88331d7dc249959f3388b01d8ff221",
+        "Title": "Params for roof",
+        "Nodes": [
+          "66f7f36f89e641909c21ec682dd75a37",
+          "f596d2d27c8f43d8a71c679b8a62d8d9"
+        ],
+        "Left": 1868.7982612427406,
+        "Top": -2055.0459449056452,
+        "Width": 178.0,
+        "Height": 293.61422504721418,
+        "FontSize": 36.0,
+        "InitialTop": -1959.045944905645,
+        "InitialHeight": 249.61422504721395,
+        "TextblockHeight": 86.0,
+        "Background": "#FFBB87C6"
+      },
+      {
+        "Id": "0e0ab8f9a3334639b70b8c5f78baeb62",
+        "Title": "FDM",
+        "Nodes": [
+          "f7ec7f79714c424d917262918357f7f5",
+          "58aa0bb1357048cabf03a69c31b8e5f7",
+          "7012df4fd2d04be595a5e9d95be7a240",
+          "db0391d465c2457b9b4d8830ac56a35a",
+          "49280e119ae84f0fbc0dab14f6a93c7e"
+        ],
+        "Left": 3078.6909935704334,
+        "Top": -1395.0783919187918,
+        "Width": 678.02846457120722,
+        "Height": 465.33915349300628,
+        "FontSize": 36.0,
+        "InitialTop": -1342.0783919187918,
+        "InitialHeight": 463.33915349300628,
+        "TextblockHeight": 43.0,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "4d039ccce8784ef48e0bfa3f5b0e8184",
+        "Title": "Prepare for FDM",
+        "Nodes": [
+          "df345c8e1a1a4fef9d63cea5be8b65e6",
+          "e9eb0a364548417e87846e054e815f12",
+          "c5e6f771c16441088cfe99fdb84afbef",
+          "461f5ee7081c4f34aec2a8f1141c1551"
+        ],
+        "Left": 2996.2430709763312,
+        "Top": -1886.7478470476199,
+        "Width": 682.66524749780183,
+        "Height": 341.75494373803372,
+        "FontSize": 36.0,
+        "InitialTop": -1833.7478470476199,
+        "InitialHeight": 330.75494373803372,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "0c3e3cd3e0f149f192f13cad1ed409d1",
+        "Title": "Create solid trusses for roof",
+        "Nodes": [
+          "bd99f528ce7543908c40518890f00a8f",
+          "f6f298e8df2647e3bb0be4594bf107ad"
+        ],
+        "Left": 3840.7558416665975,
+        "Top": -1348.2468191022426,
+        "Width": 308.99839053320738,
+        "Height": 389.63865504857495,
+        "FontSize": 36.0,
+        "InitialTop": -1252.2468191022426,
+        "InitialHeight": 345.63865504857495,
+        "TextblockHeight": 86.0,
+        "Background": "#FF48B9FF"
+      },
+      {
+        "Id": "8e167872221d4d8f9f276f46d7fd67be",
+        "Title": "Resulting Building\r\n",
+        "Nodes": [
+          "5d060a57a5db433794281fe31e744f65",
+          "cf303ae5c173454f881f97a7eeb2e107",
+          "46a0e24ea5ee4a57959360f48f7a39bb",
+          "718f04f3156f4c69a8b988a6cfd74ce3",
+          "73a5eb63d4ab418380705c24e0e0428a",
+          "7192135d9c764cb8877023061e237865"
+        ],
+        "Left": 3530.9252644102767,
+        "Top": -781.94115168697863,
+        "Width": 651.36176687079433,
+        "Height": 638.02602469552642,
+        "FontSize": 36.0,
+        "InitialTop": -685.94115168697863,
+        "InitialHeight": 594.02602469552642,
+        "TextblockHeight": 86.0,
+        "Background": "#FF48B9FF"
+      }
+    ],
+    "X": 858.45235022409122,
+    "Y": 584.46503491861927,
+    "Zoom": 0.16286950108599349
+  }
+}
