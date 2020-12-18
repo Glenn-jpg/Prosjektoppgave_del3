@@ -7,4 +7,6 @@ The scripts used for the second model is in the SecondModelWindAndSun.gh file. T
 ## The results from grasshopper
 The results from the algorithm in grasshopper can be viewed in the respective Excel files for model 1 and model 2
 ## Dynamo
-The model used in the project is within the model.dyn file
+The model used in the project is within the model.dyn file.
+
+In facade_system_v2.dyn a program for drawing a facade system for a circular building is presented, without rotation of the node points of the first and last floor. 
